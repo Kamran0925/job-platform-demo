@@ -1,0 +1,15 @@
+.container {
+  margin-top: 32px;
+}
+
+.listingsTitle {
+  text-align: left;
+  margin-top: 40px;
+  padding: 0;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px !important;
+  line-height: 110%;
+  color: #374151;
+}

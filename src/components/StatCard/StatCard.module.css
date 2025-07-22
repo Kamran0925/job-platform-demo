@@ -1,0 +1,64 @@
+.card {
+  margin-top: 20px;
+  padding: 24.5px 15.25px 24.5px 24px;
+  border-radius: 12px;
+  min-width: 200px;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.card .cardContainer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.card .iconContainer {
+  padding: 22.5px 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.card .warningBackground {
+  background-color: #fdf6b2;
+}
+
+.card .cardInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+}
+
+.card .cardTitle {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  color: #6b7280;
+}
+
+.card .cardValue {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 110%;
+  color: #1f2a37;
+  width: 69px;
+}
+
+.card .cardPercentage {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #6b7280;
+  margin-left: 8px;
+}
