@@ -1,0 +1,55 @@
+"use client";
+import {
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+  Box,
+} from "@mui/material";
+import classNames from "classnames";
+import { NAV_LINKS } from "./NavLinks";
+import Image from "next/image";
+import styles from "./SideBar.module.css";
+
+const SideBar = () => {
+  const navList = (
+    <List className={styles.navList}>
+      {NAV_LINKS.map((link) => (
+        <ListItem
+          key={link.route}
+          disablePadding
+          className={classNames(styles.navListItem)}
+        >
+          <ListItemButton className={classNames(styles.navBtn)}>
+            <ListItemIcon sx={{ minWidth: 0 }}>{<link.icon />}</ListItemIcon>
+            <ListItemText
+              primary={link.label}
+              className={classNames(styles.navItemText)}
+              disableTypography
+            />
+          </ListItemButton>
+        </ListItem>
+      ))}
+    </List>
+  );
+
+  return (
+    <>
+      <Box className={styles.sideNav}>
+        <Box className={styles.logoContainer}>
+          <Image
+            src="/assets/logo.svg"
+            alt="Logo"
+            width={129}
+            height={57}
+            className={styles.logo}
+          />
+        </Box>
+        {navList}
+      </Box>
+    </>
+  );
+};
+
+export default SideBar;
