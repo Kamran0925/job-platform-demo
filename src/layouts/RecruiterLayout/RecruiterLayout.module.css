@@ -1,0 +1,29 @@
+.mainContent {
+  position: absolute;
+  top: 0;
+  left: 223px;
+  width: 100%;
+  padding: 0;
+}
+
+.mainContent2 {
+  padding: 20px 40px;
+  background-color: lightgray;
+}
+
+.title {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 130%;
+  display: flex;
+  align-items: center;
+  color: #4b5563;
+}
+
+.cardsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
