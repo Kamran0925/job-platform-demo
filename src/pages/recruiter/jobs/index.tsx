@@ -1,7 +1,7 @@
 import RecruiterLayout from "@/layouts/RecruiterLayout/RecruiterLayout";
 import { Box, Container, Typography } from "@mui/material";
 import JobListTable from "../../../components/JobListTable/JobListTable";
-import styles from "./page.module.css";
+import styles from "./style.module.css";
 
 export default function RecruiterJobsPage() {
   return (
