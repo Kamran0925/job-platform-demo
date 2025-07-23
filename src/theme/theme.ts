@@ -8,6 +8,29 @@ const theme = createTheme({
   typography: {
     fontFamily: "Inter, sans-serif",
   },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          textTransform: "none",
+        },
+      },
+    },
+    MuiTab: {
+      styleOverrides: {
+        root: {
+          textTransform: "none",
+        },
+      },
+    },
+    MuiTypography: {
+      defaultProps: {
+        variantMapping: {
+          button: "span",
+        },
+      },
+    },
+  },
 });
 
 export default theme;
