@@ -25,6 +25,7 @@ export default function RecruiterLayout({
               {jobStatistics.map((stat, idx) => (
                 <StatCard
                   key={idx}
+                  index={idx}
                   icon={stat.icon}
                   title={stat.title}
                   value={stat.value}

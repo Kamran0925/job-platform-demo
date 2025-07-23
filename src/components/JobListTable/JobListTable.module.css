@@ -1,3 +1,11 @@
+.tableTop {
+  display: flex;
+  gap: 20px;
+  background-color: #fff;
+  padding: 16px;
+  margin-top: 20px;
+}
+
 .tableContainer {
   display: flex;
   flex-direction: column;
@@ -8,7 +16,6 @@
   height: 406px;
   background: #ffffff;
   border-radius: 12px;
-  margin-top: 20px;
 }
 
 .table {

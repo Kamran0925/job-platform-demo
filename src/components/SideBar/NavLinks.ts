@@ -1,4 +1,15 @@
+import BellIcon from "../../../public/assets/icons/bell";
+import BriefcaseIcon from "../../../public/assets/icons/briefcase";
+import BulbIcon from "../../../public/assets/icons/buld";
+import ChartIcon from "../../../public/assets/icons/chart";
+import ContactIcon from "../../../public/assets/icons/contact";
+import FileIcon from "../../../public/assets/icons/file";
 import HomeIcon from "../../../public/assets/icons/home";
+import MapIcon from "../../../public/assets/icons/map";
+import MessageIcon from "../../../public/assets/icons/message";
+import PaymentIcon from "../../../public/assets/icons/payment";
+import PieIcon from "../../../public/assets/icons/pie";
+import UserGroupIcon from "../../../public/assets/icons/users-group";
 
 export const NAV_LINKS = [
   {
@@ -8,62 +19,62 @@ export const NAV_LINKS = [
   },
   {
     route: "/explore",
-    icon: HomeIcon,
+    icon: MapIcon,
     label: "Explore",
   },
   {
     route: "/job-listings",
-    icon: HomeIcon,
+    icon: FileIcon,
     label: "Job Listings",
   },
   {
     route: "/participants",
-    icon: HomeIcon,
+    icon: UserGroupIcon,
     label: "Participants",
   },
   {
     route: "/companies",
-    icon: HomeIcon,
+    icon: BriefcaseIcon,
     label: "Companies",
   },
   {
     route: "/orders",
-    icon: HomeIcon,
+    icon: ChartIcon,
     label: "Orders",
   },
   {
     route: "/work-match-tasks",
-    icon: HomeIcon,
+    icon: BulbIcon,
     label: "WorkMatch Tasks",
   },
   {
     route: "/analytics",
-    icon: HomeIcon,
+    icon: PieIcon,
     label: "Analytics",
   },
   {
     route: "/calender",
-    icon: HomeIcon,
+    icon: ChartIcon,
     label: "Calender",
   },
   {
     route: "/payments",
-    icon: HomeIcon,
+    icon: PaymentIcon,
     label: "Payments",
   },
   {
     route: "/messages",
-    icon: HomeIcon,
+    icon: MessageIcon,
     label: "Messages",
   },
   {
     route: "/notifications",
-    icon: HomeIcon,
+    icon: BellIcon,
     label: "Notifications",
   },
   {
     route: "/contact-us",
-    icon: HomeIcon,
+    icon: ContactIcon,
     label: "Contact Us",
   },
 ];

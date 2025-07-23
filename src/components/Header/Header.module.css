@@ -1,0 +1,47 @@
+.container {
+  padding: 24px 0px;
+  background-color: #fff;
+  overflow-x: auto;
+}
+
+.subContainer {
+  display: flex;
+  max-width: 1200px;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 24px;
+}
+
+.subContainer .inputField {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 14px 24px;
+  gap: 8px;
+  width: 260px;
+  height: 52px;
+  border: none;
+  border-radius: 8px;
+}
+
+.container .btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 24px;
+  gap: 8px;
+
+  background: #1a56db;
+  border-radius: 8px;
+  color: #fff;
+}
+
+.iconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  padding: 16px;
+  background-color: #f3f4f6;
+}

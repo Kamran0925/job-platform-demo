@@ -17,6 +17,7 @@ import {
   Paper,
 } from "@mui/material";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
+import JobPostingHeader from "../JobPostingHeader/JobPostingHeader";
 
 const candidateList = [
   {
@@ -105,79 +106,82 @@ const CandidateTable = () => {
   };
 
   return (
-    <TableContainer component={Paper} sx={{ borderRadius: 3 }}>
-      <Table>
-        <TableHead>
-          <TableRow>
-            <TableCell padding="checkbox">
-              <Checkbox />
-            </TableCell>
-            <TableCell>Candidate</TableCell>
-            <TableCell>Location</TableCell>
-            <TableCell>Matching Skills</TableCell>
-            <TableCell>Status</TableCell>
-            <TableCell>Match Level</TableCell>
-            <TableCell align="right">Actions</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {candidateList.map((candidate, index) => (
-            <TableRow key={index} hover>
+    <>
+      <JobPostingHeader />
+      <TableContainer component={Paper} sx={{ borderRadius: 3 }}>
+        <Table>
+          <TableHead>
+            <TableRow>
               <TableCell padding="checkbox">
                 <Checkbox />
               </TableCell>
-              <TableCell>
-                <Box display="flex" alignItems="center" gap={1.5}>
-                  <Avatar src="/avatar.jpg" alt={candidate.name} />
-                  <Box>
-                    <Typography fontWeight={600}>{candidate.name}</Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      {candidate.title}
-                    </Typography>
-                  </Box>
-                </Box>
-              </TableCell>
-              <TableCell>
-                <Typography fontWeight={600}>{candidate.location}</Typography>
-              </TableCell>
-              <TableCell>
-                <Box display="flex" gap={1} flexWrap="wrap">
-                  {candidate.skills.map((skill, idx) => (
-                    <Chip
-                      key={idx}
-                      label={skill}
-                      size="small"
-                      variant={idx >= 4 ? "outlined" : "filled"}
-                    />
-                  ))}
-                </Box>
-              </TableCell>
-              <TableCell>
-                <Chip
-                  label={candidate.status}
-                  size="small"
-                  color={"default"}
-                  variant="outlined"
-                />
-              </TableCell>
-              <TableCell>
-                <Typography fontWeight={500}>{candidate.match}%</Typography>
-              </TableCell>
-              <TableCell align="right">
-                <IconButton onClick={handleMenuClick}>
-                  <MoreVertIcon />
-                </IconButton>
-                <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
-                  <MenuItem onClick={handleClose}>View</MenuItem>
-                  <MenuItem onClick={handleClose}>Message</MenuItem>
-                  <MenuItem onClick={handleClose}>Remove</MenuItem>
-                </Menu>
-              </TableCell>
+              <TableCell>Candidate</TableCell>
+              <TableCell>Location</TableCell>
+              <TableCell>Matching Skills</TableCell>
+              <TableCell>Status</TableCell>
+              <TableCell>Match Level</TableCell>
+              <TableCell align="right">Actions</TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+          </TableHead>
+          <TableBody>
+            {candidateList.map((candidate, index) => (
+              <TableRow key={index} hover>
+                <TableCell padding="checkbox">
+                  <Checkbox />
+                </TableCell>
+                <TableCell>
+                  <Box display="flex" alignItems="center" gap={1.5}>
+                    <Avatar src="/avatar.jpg" alt={candidate.name} />
+                    <Box>
+                      <Typography fontWeight={600}>{candidate.name}</Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        {candidate.title}
+                      </Typography>
+                    </Box>
+                  </Box>
+                </TableCell>
+                <TableCell>
+                  <Typography fontWeight={600}>{candidate.location}</Typography>
+                </TableCell>
+                <TableCell>
+                  <Box display="flex" gap={1} flexWrap="wrap">
+                    {candidate.skills.map((skill, idx) => (
+                      <Chip
+                        key={idx}
+                        label={skill}
+                        size="small"
+                        variant={idx >= 4 ? "outlined" : "filled"}
+                      />
+                    ))}
+                  </Box>
+                </TableCell>
+                <TableCell>
+                  <Chip
+                    label={candidate.status}
+                    size="small"
+                    color={"default"}
+                    variant="outlined"
+                  />
+                </TableCell>
+                <TableCell>
+                  <Typography fontWeight={500}>{candidate.match}%</Typography>
+                </TableCell>
+                <TableCell align="right">
+                  <IconButton onClick={handleMenuClick}>
+                    <MoreVertIcon />
+                  </IconButton>
+                  <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
+                    <MenuItem onClick={handleClose}>View</MenuItem>
+                    <MenuItem onClick={handleClose}>Message</MenuItem>
+                    <MenuItem onClick={handleClose}>Remove</MenuItem>
+                  </Menu>
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </>
   );
 };
 
