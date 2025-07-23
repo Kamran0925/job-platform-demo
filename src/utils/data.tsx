@@ -1,5 +1,8 @@
 import { Job } from "../types/job";
 import DocIcon from "../../public/assets/icons/document";
+import CalendarIcon from "../../public/assets/icons/calender";
+import MailIcon from "../../public/assets/icons/mail";
+import CancelIcon from "../../public/assets/icons/cross";
 
 export const jobStatistics = [
   {
@@ -10,19 +13,19 @@ export const jobStatistics = [
   },
   {
     title: "Views",
-    icon: <DocIcon />,
+    icon: <CalendarIcon />,
     value: 200,
     percentage: -1.2,
   },
   {
     title: "Hired",
-    icon: <DocIcon />,
+    icon: <MailIcon />,
     value: 300,
     percentage: +11,
   },
   {
     title: "Rejected",
-    icon: <DocIcon />,
+    icon: <CancelIcon />,
     value: 450,
     percentage: +5.2,
   },
