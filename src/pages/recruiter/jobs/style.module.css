@@ -11,3 +11,26 @@
   line-height: 110%;
   color: #374151;
 }
+
+@media (max-width: 768px) {
+  .listingsTitle {
+    font-size: 24px !important;
+    text-align: center;
+    margin-top: 16px;
+  }
+
+  .container {
+    margin-top: 24px;
+    padding: 0 16px;
+  }
+
+  .header {
+    flex-direction: column !important;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .backBtn {
+    padding: 6px 8px;
+  }
+}

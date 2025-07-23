@@ -95,3 +95,9 @@
   background: #ffffff;
   border-radius: 8px;
 }
+
+@media (max-width: 1024px) {
+  .subContainer3 {
+    display: none;
+  }
+}

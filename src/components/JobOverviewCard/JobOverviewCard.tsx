@@ -43,7 +43,11 @@ export default function JobOverviewCard({ id }: { id: string }) {
           onClose={() => setShowSnackbar(false)}
           message="Application submitted successfully!"
         />
-        <Link href={`/user/jobs/${id}`} passHref>
+        <Link
+          href={`/user/jobs/${id}`}
+          passHref
+          style={{ textDecoration: "none", color: "initial" }}
+        >
           <Box
             sx={{
               display: "flex",
@@ -182,7 +186,7 @@ export default function JobOverviewCard({ id }: { id: string }) {
             </Button>
           )}
           {hasApplied && (
-            <Button variant="outlined" className={styles.button} disabled>
+            <Button variant="outlined" className={styles.disabledBtn} disabled>
               You’ve applied
             </Button>
           )}

@@ -13,11 +13,14 @@ import { NAV_LINKS } from "./NavLinks";
 import Image from "next/image";
 import useAuth from "@/hooks/useAuth";
 import { useRouter } from "next/router";
+import { useState } from "react";
 import styles from "./SideBar.module.css";
 
 const SideBar = () => {
   const router = useRouter();
   const { logout } = useAuth();
+  const [isHovered, setHovered] = useState(false);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const handleLogoClick = () => {
     logout();
@@ -26,18 +29,27 @@ const SideBar = () => {
 
   const navList = (
     <List className={styles.navList}>
-      {NAV_LINKS.map((link) => (
+      {NAV_LINKS.map((link, index) => (
         <ListItem
           key={link.route}
           disablePadding
           className={classNames(styles.navListItem)}
         >
-          <ListItemButton className={classNames(styles.navBtn)}>
-            <ListItemIcon sx={{ minWidth: 0 }}>{<link.icon />}</ListItemIcon>
+          <ListItemButton
+            key={index}
+            className={styles.navBtn}
+            onMouseEnter={() => setHoveredIndex(index)}
+            onMouseLeave={() => setHoveredIndex(null)}
+          >
+            <ListItemIcon sx={{ minWidth: 0 }}>
+              <link.icon
+                color={hoveredIndex === index ? "#1a56db" : "#9ca3af"}
+              />
+            </ListItemIcon>
             <ListItemText
               primary={link.label}
               className={classNames(
-                link.label === "Job Listings" && styles.activeNavItem
+                hoveredIndex === index && styles.activeNavItem
               )}
               disableTypography
             />

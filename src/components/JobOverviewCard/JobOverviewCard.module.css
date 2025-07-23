@@ -4,9 +4,7 @@
   align-items: flex-start;
   padding: 30px;
   gap: 16px;
-
-  width: 628px;
-
+  width: 100%;
   background: #ffffff;
   border-radius: 20px;
   padding: 30px;
@@ -141,7 +139,6 @@
   background: #f3f4f6;
   border-radius: 8px;
   border: 0 !important;
-  font-family: Inter;
   font-weight: 500;
   font-size: 14px;
   line-height: 150%;
@@ -162,4 +159,21 @@
   font-size: 14px;
   line-height: 150%;
   letter-spacing: 0%;
+}
+
+.disabledBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 12px;
+  gap: 8px;
+
+  background: #1a56db;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  color: #fff;
 }

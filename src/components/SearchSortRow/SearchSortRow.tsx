@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 import { useState } from "react";
 import Image from "next/image";
+import SearchInput from "../SearchFor/SearchFor";
 
 export default function SearchSortRow() {
   const [sortValue, setSortValue] = useState("matching");
@@ -20,50 +21,7 @@ export default function SearchSortRow() {
       width="100%"
       mt={"20px"}
     >
-      <Box
-        display="flex"
-        flexDirection="row"
-        alignItems="center"
-        padding="14px 0px"
-        gap="8px"
-        width="260px"
-        height="52px"
-        border="1px solid #E5E7EB"
-        borderRadius="8px"
-        boxSizing="border-box"
-      >
-        <TextField
-          placeholder="Search for..."
-          variant="outlined"
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <Image
-                  src="/assets/search.svg"
-                  alt="search"
-                  width={18}
-                  height={18}
-                />
-              </InputAdornment>
-            ),
-          }}
-          sx={{
-            "& .MuiInputBase-input": {
-              fontFamily: "Inter",
-              fontWeight: 400,
-              fontStyle: "normal",
-              fontSize: "18px",
-              lineHeight: "130%",
-              letterSpacing: "0%",
-            },
-            "& .MuiInputBase-input::placeholder": {
-              color: "#76A9FA",
-              opacity: 1,
-            },
-          }}
-          fullWidth
-        />
-      </Box>
+      <SearchInput />
 
       <Box
         display="flex"
@@ -89,7 +47,6 @@ export default function SearchSortRow() {
           sx={{
             fontSize: "14px",
             color: "#4B5563",
-            fontFamily: "Inter",
             height: "37px",
           }}
         >

@@ -32,7 +32,12 @@ export default function JobDetailPage() {
             </Typography>
           </Paper>
         )}
-        <Stack className={styles.header}>
+        <Stack
+          className={styles.header}
+          direction="row"
+          justifyContent="space-between"
+          alignItems="center"
+        >
           <Link href="/recruiter/jobs" passHref>
             <Button className={styles.backBtn}>
               <ArrowBack fontSize="small" />

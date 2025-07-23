@@ -12,7 +12,14 @@ export default function RecruiterJobsPage() {
         disableGutters
         className={styles.container}
       >
-        <Box sx={{ pl: 0, ml: 0 }}>
+        <Box
+          sx={{
+            width: "100%",
+            overflowX: "hidden",
+            pl: { xs: 0, md: 0 },
+            ml: { xs: 0, md: 0 },
+          }}
+        >
           <Typography className={styles.listingsTitle}>Job Listings</Typography>
           <JobListTable />
         </Box>

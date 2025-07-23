@@ -1,5 +1,5 @@
 "use client";
-import { Box, Button, Chip, Stack, Typography } from "@mui/material";
+import { Box, Button, Chip, Snackbar, Stack, Typography } from "@mui/material";
 import {
   ArrowBack,
   CalendarMonth,
@@ -7,13 +7,38 @@ import {
   Work,
 } from "@mui/icons-material";
 import Link from "next/link";
+import { useApply } from "@/context/ApplyContext";
+import { useState } from "react";
+import ConfirmationDialog from "../ConfirmationDialog/ConfirmationDialog";
 import styles from "./JobDetails.module.css";
 
 const tags = ["Data", "Product", "UX", "Design"];
 
 const JobDetails = () => {
+  const [openDialog, setOpenDialog] = useState(false);
+  const [showSnackbar, setShowSnackbar] = useState(false);
+  const { hasApplied, setHasApplied } = useApply();
+
+  const handleApply = () => setOpenDialog(true);
+  const handleConfirm = () => {
+    setHasApplied(true);
+    setShowSnackbar(true);
+    setOpenDialog(false);
+  };
   return (
     <Box className={styles.wrapper}>
+      <ConfirmationDialog
+        open={openDialog}
+        onClose={() => setOpenDialog(false)}
+        onConfirm={handleConfirm}
+      />
+
+      <Snackbar
+        open={showSnackbar}
+        autoHideDuration={3000}
+        onClose={() => setShowSnackbar(false)}
+        message="Application submitted successfully!"
+      />
       <Box
         sx={{
           display: "flex",
@@ -43,29 +68,60 @@ const JobDetails = () => {
           </Box>
         </Box>
 
-        <Button
-          variant="contained"
-          sx={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "center",
-            alignItems: "center",
-            padding: "14px 24px",
-            gap: "8px",
-            width: "139px",
-            height: "51px",
-            backgroundColor: "#1A56DB",
-            borderRadius: "8px",
-            textTransform: "none",
-            boxShadow: "none",
-            "&:hover": {
-              backgroundColor: "#174CC8",
+        {!hasApplied && (
+          <Button
+            variant="contained"
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "center",
+              alignItems: "center",
+              padding: "14px 24px",
+              gap: "8px",
+              width: "139px",
+              height: "51px",
+              backgroundColor: "#1A56DB",
+              borderRadius: "8px",
+              textTransform: "none",
               boxShadow: "none",
-            },
-          }}
-        >
-          Apply Now
-        </Button>
+              "&:hover": {
+                backgroundColor: "#174CC8",
+                boxShadow: "none",
+              },
+            }}
+            onClick={handleApply}
+            className={styles.button}
+          >
+            Quick Apply
+          </Button>
+        )}
+        {hasApplied && (
+          <Button
+            variant="contained"
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "center",
+              alignItems: "center",
+              padding: "14px 24px",
+              gap: "8px",
+              width: "139px",
+              height: "51px",
+              backgroundColor: "#1A56DB",
+              borderRadius: "8px",
+              textTransform: "none",
+              boxShadow: "none",
+              "&:hover": {
+                backgroundColor: "#174CC8",
+                boxShadow: "none",
+              },
+            }}
+            className={styles.button}
+            disabled
+          >
+            You’ve applied
+          </Button>
+        )}
       </Box>
       <Stack
         sx={{

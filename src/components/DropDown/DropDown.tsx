@@ -7,10 +7,6 @@ export default function Dropdown({ label = "Dropdown" }: { label?: string }) {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
 
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
-
   const handleClose = () => {
     setAnchorEl(null);
   };
@@ -19,7 +15,7 @@ export default function Dropdown({ label = "Dropdown" }: { label?: string }) {
     <>
       <Button
         className={styles.dropdown}
-        onClick={handleClick}
+        onClick={() => null}
         endIcon={<ArrowDropDownIcon />}
         sx={{
           color: "#4B5563",

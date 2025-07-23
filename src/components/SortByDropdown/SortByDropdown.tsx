@@ -55,9 +55,7 @@ const SortByDropdown = () => {
         <InputLabel
           shrink={false}
           sx={{
-            fontFamily: "Inter",
             fontWeight: 400,
-            fontStyle: "normal",
             fontSize: "18px",
             lineHeight: "130%",
             letterSpacing: "0",
@@ -103,7 +101,6 @@ const SortByDropdown = () => {
             "& .MuiSelect-select": {
               padding: "10px",
               minHeight: "40px",
-              fontFamily: "Inter",
               fontSize: "16px",
             },
             "& fieldset": {
@@ -136,7 +133,7 @@ const SortByDropdown = () => {
                   backgroundColor: "#F9FAFB",
                   borderRadius: "4px",
                   "& .MuiSvgIcon-root": {
-                    fontSize: "16px",
+                    fontSize: "24px",
                   },
                   "& .MuiCheckbox-root": {
                     border: "none",
@@ -157,7 +154,6 @@ const SortByDropdown = () => {
               display: "flex",
               alignItems: "center",
               gap: "8px",
-              fontFamily: "Inter",
               fontWeight: 400,
               fontSize: "18px",
               lineHeight: "130%",

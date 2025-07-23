@@ -20,6 +20,7 @@ import NextLink from "next/link";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Dropdown from "../DropDown/DropDown";
 import styles from "./JobListTable.module.css";
+import SearchInput from "../SearchFor/SearchFor";
 
 const jobList = [
   {
@@ -56,20 +57,44 @@ const JobListTable = () => {
   };
   return (
     <Box>
-      <Box className={styles.tableTop}>
-        <Dropdown label="Job Status" />
-        <Dropdown label="Job Type" />
-        <Dropdown label="Date Posted" />
-        <Dropdown label="Applicants" />
+      <Box
+        className={styles.tableTop}
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}
+      >
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            gap: "20px",
+            flexWrap: "wrap",
+          }}
+        >
+          <Dropdown label="Job Status" />
+          <Dropdown label="Job Type" />
+          <Dropdown label="Date Posted" />
+          <Dropdown label="Applicants" />
+        </Box>
+        <SearchInput placeholder="Search Candidates" color="#D1D5DB" />
       </Box>
+
       <TableContainer
         component={Paper}
         sx={{
           boxShadow: "none",
+          overflowX: "auto",
         }}
         className={styles.tableContainer}
       >
-        <Table className={styles.table}>
+        <Table
+          className={styles.table}
+          sx={{
+            minWidth: 800,
+          }}
+        >
           <TableHead>
             <TableRow>
               <TableCell padding="checkbox">
@@ -88,7 +113,6 @@ const JobListTable = () => {
             {jobList.map((job, index) => (
               <TableRow
                 key={index}
-                hover
                 component={NextLink}
                 href={`/recruiter/jobs/${index + 1}`}
                 sx={{ cursor: "pointer", textDecoration: "none" }}
@@ -138,6 +162,7 @@ const JobListTable = () => {
             display: "flex",
             justifyContent: "flex-end",
             width: "100%",
+            mt: 2,
           }}
         >
           <Pagination
@@ -177,7 +202,6 @@ const JobListTable = () => {
                     ? "#E1EFFE !important"
                     : "#fff",
                   border: "1px solid #D1D5DB",
-                  fontFamily: "Inter",
                   fontWeight: 500,
                   fontSize: "14px",
                   lineHeight: "21px",
