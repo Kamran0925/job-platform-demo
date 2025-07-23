@@ -28,6 +28,9 @@
   padding-right: 23px;
 }
 
+.sideNav .navList .activeNavItem {
+  color: #1a56db;
+}
 .sideNav .navList .navListItem .navBtn {
   padding: 12px 0px 12px 26px;
   display: flex;

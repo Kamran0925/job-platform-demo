@@ -4,10 +4,8 @@
 
 .listingsTitle {
   text-align: left;
-  margin-top: 40px;
+  margin-top: 20px;
   padding: 0;
-  font-family: "Inter";
-  font-style: normal;
   font-weight: 600;
   font-size: 32px !important;
   line-height: 110%;

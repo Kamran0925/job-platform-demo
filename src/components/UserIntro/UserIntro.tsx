@@ -1,7 +1,7 @@
 import { Avatar, Box, Chip, Stack, Typography } from "@mui/material";
 import styles from "./UserIntro.module.css";
 
-const skills = ["React", "TypeScript", "Next.js", "MUI", "Tailwind"];
+const skills = ["HR", "IT Recruiter"];
 
 const UserIntro = () => {
   return (
@@ -10,24 +10,17 @@ const UserIntro = () => {
         My Job Coach
       </Typography>
 
-      <Stack
-        direction="row"
-        spacing={2}
-        alignItems="center"
-        mb={2}
-        className={styles.profile}
-      >
+      <Box className={styles.profile}>
         <Avatar
           alt="profile picture"
           src="/assets/profile-picture-2.png"
-          sx={{ width: 40, height: 40 }}
           className={styles.avatar}
         />
-        <Stack className={styles.info}>
+        <Box className={styles.info}>
           <Typography className={styles.name}>Anna Brown</Typography>
           <Typography className={styles.profession}>Job Coach</Typography>
-        </Stack>
-      </Stack>
+        </Box>
+      </Box>
 
       <Stack
         direction="row"

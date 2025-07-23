@@ -17,13 +17,10 @@
 }
 
 .title {
-  font-family: "Inter";
-  font-style: normal;
   font-weight: 600;
-  font-size: 26px;
+  font-size: 26px !important;
   line-height: 130%;
-
-  color: #4b5563;
+  letter-spacing: 0%;
 }
 
 .backBtn {
@@ -49,4 +46,13 @@
   padding-left: 1rem;
   margin-top: 0;
   margin-bottom: 0;
+}
+
+.chip {
+  font-family: "Roboto";
+  font-weight: 600;
+  padding: 4px 12px;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0%;
 }

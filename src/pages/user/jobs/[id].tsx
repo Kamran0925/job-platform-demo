@@ -18,7 +18,10 @@ export default function JobDetailsPage() {
             View Saved Jobs
           </Button>
         </Box>
-        <Box className={styles.subContainer2}>
+        <Box
+          className={styles.subContainer2}
+          sx={{ backgroundColor: "#FFF !important", padding: "40px" }}
+        >
           <JobDetails />
         </Box>
       </Box>

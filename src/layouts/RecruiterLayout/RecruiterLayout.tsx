@@ -15,7 +15,7 @@ export default function RecruiterLayout({
       <Box sx={{ display: "flex", minHeight: "100vh", width: "100%" }}>
         <Sidebar />
         <Box className={styles.mainContent}>
-          <Header title="Recruiter Dashboard" />
+          <Header />
           <Box className={styles.mainContent2}>
             <Typography variant="h5" className={styles.title}>
               Overview

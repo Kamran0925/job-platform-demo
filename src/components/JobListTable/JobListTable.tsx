@@ -14,11 +14,12 @@ import {
   MenuItem,
   Paper,
   Pagination,
-  Stack,
+  PaginationItem,
 } from "@mui/material";
+import NextLink from "next/link";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-import styles from "./JobListTable.module.css";
 import Dropdown from "../DropDown/DropDown";
+import styles from "./JobListTable.module.css";
 
 const jobList = [
   {
@@ -61,7 +62,13 @@ const JobListTable = () => {
         <Dropdown label="Date Posted" />
         <Dropdown label="Applicants" />
       </Box>
-      <TableContainer component={Paper} className={styles.tableContainer}>
+      <TableContainer
+        component={Paper}
+        sx={{
+          boxShadow: "none",
+        }}
+        className={styles.tableContainer}
+      >
         <Table className={styles.table}>
           <TableHead>
             <TableRow>
@@ -79,7 +86,13 @@ const JobListTable = () => {
           </TableHead>
           <TableBody>
             {jobList.map((job, index) => (
-              <TableRow key={index} hover>
+              <TableRow
+                key={index}
+                hover
+                component={NextLink}
+                href={`/recruiter/jobs/${index + 1}`}
+                sx={{ cursor: "pointer", textDecoration: "none" }}
+              >
                 <TableCell padding="checkbox">
                   <Checkbox />
                 </TableCell>
@@ -120,22 +133,61 @@ const JobListTable = () => {
             ))}
           </TableBody>
         </Table>
-        <Stack
-          direction="row"
-          justifyContent="flex-end"
-          alignSelf="flex-end"
-          mt={2}
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "flex-end",
+            width: "100%",
+          }}
         >
           <Pagination
             count={100}
             page={page}
             onChange={handleChange}
+            boundaryCount={1}
+            siblingCount={0}
             variant="outlined"
             shape="rounded"
-            showFirstButton
-            showLastButton
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "flex-start",
+              padding: "0px 20px 0px 0px",
+              gap: "0px !important",
+              minWidth: "291px",
+              height: "33px",
+              "& .MuiPagination-ul": {
+                gap: 0,
+                padding: 0,
+                margin: 0,
+              },
+            }}
+            renderItem={(item) => (
+              <PaginationItem
+                {...item}
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  padding: "6px 12px",
+                  width: "33px",
+                  height: "33px",
+                  backgroundColor: item.selected
+                    ? "#E1EFFE !important"
+                    : "#fff",
+                  border: "1px solid #D1D5DB",
+                  fontFamily: "Inter",
+                  fontWeight: 500,
+                  fontSize: "14px",
+                  lineHeight: "21px",
+                  color: item.selected ? "#1C64F2" : "#6B7280",
+                  textAlign: "center",
+                }}
+              />
+            )}
           />
-        </Stack>
+        </Box>
       </TableContainer>
     </Box>
   );

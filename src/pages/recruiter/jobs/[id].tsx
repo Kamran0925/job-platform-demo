@@ -1,7 +1,17 @@
 import RecruiterLayout from "@/layouts/RecruiterLayout/RecruiterLayout";
-import { Box, Container, Paper, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Container,
+  Paper,
+  Stack,
+  Typography,
+} from "@mui/material";
+import Link from "next/link";
 import CandidateTable from "@/components/CandidateListTable/CandidateListTable";
 import { useApply } from "@/context/ApplyContext";
+import SearchSortRow from "@/components/SearchSortRow/SearchSortRow";
+import { ArrowBack } from "@mui/icons-material";
 import styles from "./style.module.css";
 
 export default function JobDetailPage() {
@@ -22,8 +32,19 @@ export default function JobDetailPage() {
             </Typography>
           </Paper>
         )}
+        <Stack className={styles.header}>
+          <Link href="/recruiter/jobs" passHref>
+            <Button className={styles.backBtn}>
+              <ArrowBack fontSize="small" />
+              <Typography variant="body2" color="primary">
+                Back
+              </Typography>
+            </Button>
+          </Link>
+        </Stack>
         <Box sx={{ pl: 0, ml: 0 }}>
           <Typography className={styles.listingsTitle}>Job Listings</Typography>
+          <SearchSortRow />
           <CandidateTable />
         </Box>
       </Container>

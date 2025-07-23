@@ -1,20 +1,12 @@
 "use client";
-import {
-  Box,
-  Button,
-  Chip,
-  Divider,
-  IconButton,
-  Stack,
-  Typography,
-} from "@mui/material";
+import { Box, Button, Chip, Stack, Typography } from "@mui/material";
 import {
   ArrowBack,
   CalendarMonth,
   AccessTime,
   Work,
-  MoreHoriz,
 } from "@mui/icons-material";
+import Link from "next/link";
 import styles from "./JobDetails.module.css";
 
 const tags = ["Data", "Product", "UX", "Design"];
@@ -22,32 +14,65 @@ const tags = ["Data", "Product", "UX", "Design"];
 const JobDetails = () => {
   return (
     <Box className={styles.wrapper}>
-      <Stack className={styles.header}>
-        <Button className={styles.backBtn}>
-          <ArrowBack fontSize="small" />
-          <Typography variant="body2" color="primary">
-            Back
-          </Typography>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "flex-end",
+          justifyContent: "space-between",
+          width: "100%",
+        }}
+      >
+        <Box>
+          <Stack className={styles.header}>
+            <Link href="/user/jobs" passHref>
+              <Button className={styles.backBtn}>
+                <ArrowBack fontSize="small" />
+                <Typography variant="body2" color="primary">
+                  Back
+                </Typography>
+              </Button>
+            </Link>
+          </Stack>
+          <Box sx={{ display: "flex", gap: "8px" }}>
+            <Typography className={styles.title}>Senior UX Designer</Typography>
+
+            <Stack direction="row" className={styles.align1}>
+              <Chip className={styles.chip} label="FULL-TIME" size="small" />
+              <Chip className={styles.chip} label="HYBRID" size="small" />
+            </Stack>
+          </Box>
+        </Box>
+
+        <Button
+          variant="contained"
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+            alignItems: "center",
+            padding: "14px 24px",
+            gap: "8px",
+            width: "139px",
+            height: "51px",
+            backgroundColor: "#1A56DB",
+            borderRadius: "8px",
+            textTransform: "none",
+            boxShadow: "none",
+            "&:hover": {
+              backgroundColor: "#174CC8",
+              boxShadow: "none",
+            },
+          }}
+        >
+          Apply Now
         </Button>
-
-        <Stack direction="row" spacing={2}>
-          <Button variant="contained" color="primary">
-            Apply Now
-          </Button>
-          <IconButton>
-            <MoreHoriz />
-          </IconButton>
-        </Stack>
-      </Stack>
-
-      <Typography className={styles.title}>Senior UX Designer</Typography>
-
-      <Stack direction="row" className={styles.align1}>
-        <Chip label="FULL-TIME" size="small" />
-        <Chip label="HYBRID" size="small" />
-      </Stack>
-
-      <Stack spacing={1} mb={2}>
+      </Box>
+      <Stack
+        sx={{
+          marginTop: "32px",
+          gap: "16px",
+        }}
+      >
         <Info
           icon={<CalendarMonth fontSize="small" />}
           text="Posted on March 22, 2025"
@@ -58,19 +83,33 @@ const JobDetails = () => {
         />
         <Info icon={<Work fontSize="small" />} text="Intelligent Apps" bold />
         <Info
-          icon={<img src="/icons/salary.svg" alt="Salary" height={18} />}
+          icon={<img src="/assets/dollar.svg" alt="Salary" height={18} />}
           text="100,000 EUR/yr"
           bold
         />
-        <Stack direction="row" spacing={1}>
-          {tags.map((tag, idx) => (
-            <Chip key={idx} label={tag} size="small" />
-          ))}
-        </Stack>
+        <Info
+          icon={<img src="/assets/key.svg" alt="Salary" height={18} />}
+          text=""
+          component={
+            <Stack direction="row" spacing={1}>
+              {tags.map((tag, idx) => (
+                <Chip
+                  key={idx}
+                  label={tag}
+                  size="small"
+                  sx={{
+                    fontWeight: 500,
+                    fontSize: "12px",
+                    lineHeight: "18px",
+                    textAlign: "center",
+                  }}
+                />
+              ))}
+            </Stack>
+          }
+          bold
+        />
       </Stack>
-
-      <Divider sx={{ my: 2 }} />
-
       <Section
         title="Company Overview"
         bullets={[
@@ -78,7 +117,6 @@ const JobDetails = () => {
         ]}
         paragraph
       />
-
       <Section
         title="Job Overview"
         bullets={[
@@ -86,7 +124,6 @@ const JobDetails = () => {
           " Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         ]}
       />
-
       <Section
         title="Key Responsibilities"
         bullets={[
@@ -94,7 +131,6 @@ const JobDetails = () => {
           " Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         ]}
       />
-
       <Section
         title="Candidate Requirements"
         bullets={[
@@ -111,11 +147,13 @@ const JobDetails = () => {
 
 const Info = ({
   icon,
-  text,
+  text = "",
   bold = false,
+  component = null,
 }: {
   icon: React.ReactNode;
   text: string;
+  component?: React.ReactNode;
   bold?: boolean;
 }) => (
   <Stack direction="row" alignItems="center" spacing={1}>
@@ -123,6 +161,7 @@ const Info = ({
     <Typography variant="body2" fontWeight={bold ? 600 : 400}>
       {text}
     </Typography>
+    {component}
   </Stack>
 );
 

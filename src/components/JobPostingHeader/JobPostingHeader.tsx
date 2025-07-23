@@ -1,4 +1,3 @@
-// components/JobPostingHeader.js
 import React from "react";
 import {
   Box,
@@ -23,7 +22,6 @@ import styles from "./JobPostingHeader.module.css"; // Import CSS module
 const JobPostingHeader = () => {
   return (
     <Box className={styles.headerContainer}>
-      {/* Top Section */}
       <Box className={styles.topSection}>
         <Typography variant="h4" component="h1" className={styles.title}>
           Product Manager
@@ -47,11 +45,9 @@ const JobPostingHeader = () => {
         </Box>
       </Box>
 
-      {/* Middle Section - Row 1 */}
       <Box className={styles.middleSectionRow}>
         <Box className={styles.infoItem}>
           <BusinessCenterIcon fontSize="small" />{" "}
-          {/* Using BusinessCenterIcon for '2' */}
           <Typography variant="body2">2</Typography>
         </Box>
         <Box className={styles.infoItem}>
@@ -66,7 +62,7 @@ const JobPostingHeader = () => {
           <CalendarTodayIcon fontSize="small" />
           <Typography variant="body2">01 Sep 2025</Typography>
         </Box>
-        <Box sx={{ flexGrow: 1 }} /> {/* Spacer */}
+        <Box sx={{ flexGrow: 1 }} />
         <Box className={styles.infoItem}>
           <PublicIcon fontSize="small" />
           <Typography variant="body2">Replacere.org/Job/Ido</Typography>
@@ -76,7 +72,6 @@ const JobPostingHeader = () => {
         </Avatar>
       </Box>
 
-      {/* Middle Section - Row 2 */}
       <Box className={styles.middleSectionRow}>
         <Typography variant="body2" sx={{ fontWeight: 600 }}>
           Hired:
@@ -90,7 +85,7 @@ const JobPostingHeader = () => {
         <Typography variant="body2" sx={{ ml: 0.5 }}>
           01 Sep 2025
         </Typography>
-        <Box sx={{ flexGrow: 1 }} /> {/* Spacer */}
+        <Box sx={{ flexGrow: 1 }} />
         <Button variant="contained" size="small" className={styles.button}>
           Chat with Jane
         </Button>
@@ -99,14 +94,12 @@ const JobPostingHeader = () => {
         </Button>
       </Box>
 
-      {/* Tabs/Filter Section - Placeholder for now */}
       <Box className={styles.tabsSection}>
         <Chip label="All Candidates" clickable className={styles.activeTab} />
         <Chip label="New Candidates" clickable className={styles.tab} />
         <Chip label="Shortlisted" clickable className={styles.tab} />
       </Box>
 
-      {/* Description Section */}
       <Box className={styles.descriptionSection}>
         <Typography variant="body1" className={styles.descriptionText}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
