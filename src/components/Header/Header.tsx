@@ -1,9 +1,12 @@
-import { Avatar, Button, TextField, Typography } from "@mui/material";
+"use client";
+import { Button, Typography } from "@mui/material";
 import Image from "next/image";
 import { Tabs, Tab, Box } from "@mui/material";
 import classNames from "classnames";
 import useAuth from "@/hooks/useAuth";
 import { useRouter } from "next/navigation";
+import ProfileDropdown from "../ProfileDropDown/ProfileDropDown";
+import SearchInput from "../SearchFor/SearchFor";
 import styles from "./Header.module.css";
 
 export default function Header() {
@@ -15,7 +18,8 @@ export default function Header() {
       className={styles.container}
       sx={{
         ...(userType !== "user" && { justifyContent: "flex-end" }),
-        width: "85%",
+        width: "100%",
+        flexWrap: "wrap",
       }}
     >
       {userType == "user" && (
@@ -38,10 +42,7 @@ export default function Header() {
       )}
       {userType !== "user" && (
         <Box className={styles.subContainer}>
-          <TextField
-            className={styles.inputField}
-            placeholder="Search for..."
-          />
+          <SearchInput />
           <Button className={styles.btn}>
             <Image src="/assets/plus.svg" alt="plus" width={16} height={16} />
             New Job
@@ -58,7 +59,7 @@ export default function Header() {
             <Image src="/assets/bell.svg" alt="bell" width={16} height={20} />
           </Box>
           <Box>
-            <Avatar src="/assets/profile-picture-1.png" alt="profile" />
+            <ProfileDropdown />
           </Box>
         </Box>
       )}

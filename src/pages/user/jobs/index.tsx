@@ -73,9 +73,13 @@ export default function UserJobListingsPage() {
           />
           <TextField
             select
+            disabled
             label="Company"
             fullWidth
             className={styles.inputField2}
+            SelectProps={{
+              open: false,
+            }}
             sx={{
               "& .MuiOutlinedInput-root": {
                 "& fieldset": {
@@ -83,7 +87,7 @@ export default function UserJobListingsPage() {
                 },
               },
             }}
-          ></TextField>
+          />
           <SortByDropdown />
         </Box>
       </Box>

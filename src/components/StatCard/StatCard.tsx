@@ -7,7 +7,7 @@ interface StatCardProps {
   title: string;
   value: string | number;
   icon?: React.ReactNode;
-  percentage?: number;
+  percentage?: string;
 }
 
 const backgrounds = ["#fdf6b2", "#def7ec", "#EDEBFE", "#fce8f3"];

@@ -11,29 +11,33 @@ export default function RecruiterLayout({
   children: React.ReactNode;
 }) {
   return (
-    <Container maxWidth="lg" disableGutters sx={{ p: 0, m: 0 }}>
-      <Box sx={{ display: "flex", minHeight: "100vh", width: "100%" }}>
-        <Sidebar />
+    <Container
+      maxWidth={false}
+      disableGutters
+      sx={{ p: 0, m: 0, overflowX: "hidden", width: "100vw" }}
+    >
+      <Box sx={{ display: "flex", width: "100%", overflowX: "hidden" }}>
+        <Box
+          sx={{
+            display: { xs: "none", md: "block" },
+            width: "223px",
+            flexShrink: 0,
+          }}
+        >
+          <Sidebar />
+        </Box>
+
         <Box className={styles.mainContent}>
           <Header />
           <Box className={styles.mainContent2}>
             <Typography variant="h5" className={styles.title}>
               Overview
             </Typography>
-
             <Box className={styles.cardsWrapper}>
               {jobStatistics.map((stat, idx) => (
-                <StatCard
-                  key={idx}
-                  index={idx}
-                  icon={stat.icon}
-                  title={stat.title}
-                  value={stat.value}
-                  percentage={stat.percentage}
-                />
+                <StatCard key={idx} {...stat} index={idx} />
               ))}
             </Box>
-
             {children}
           </Box>
         </Box>

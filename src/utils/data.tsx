@@ -9,25 +9,25 @@ export const jobStatistics = [
     title: "Applications",
     icon: <DocIcon />,
     value: 1200,
-    percentage: +2.5,
+    percentage: "+2.5",
   },
   {
     title: "Views",
     icon: <CalendarIcon />,
     value: 200,
-    percentage: -1.2,
+    percentage: "-1.2",
   },
   {
     title: "Hired",
     icon: <MailIcon />,
     value: 300,
-    percentage: +11,
+    percentage: "+11",
   },
   {
     title: "Rejected",
     icon: <CancelIcon />,
     value: 450,
-    percentage: +5.2,
+    percentage: "+5.2",
   },
 ];
 

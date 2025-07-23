@@ -115,9 +115,10 @@ const CandidateTable = () => {
         component={Paper}
         sx={{
           boxShadow: "none",
+          overflowX: "auto",
         }}
       >
-        <Table>
+        <Table sx={{ minWidth: 800 }}>
           <TableHead>
             <TableRow>
               <TableCell padding="checkbox">
@@ -133,7 +134,10 @@ const CandidateTable = () => {
           </TableHead>
           <TableBody>
             {candidateList.map((candidate, index) => (
-              <TableRow key={index} hover>
+              <TableRow
+                key={index}
+                sx={{ cursor: "pointer", textDecoration: "none" }}
+              >
                 <TableCell padding="checkbox">
                   <Checkbox />
                 </TableCell>
