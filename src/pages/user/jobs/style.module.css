@@ -1,0 +1,102 @@
+.container1 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 24px;
+}
+
+.subContainer1 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 302px;
+}
+
+.savedJobsButton {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 24px;
+  gap: 8px;
+  width: 100%;
+  height: 51px;
+  border: 1px solid #9ca3af;
+  border-radius: 8px;
+}
+
+.subContainer2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px;
+  gap: 32px;
+  background-color: #fff;
+}
+
+.subContainer2 .trendingTitle {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 130%;
+  display: flex;
+  align-items: center;
+
+  color: #4b5563;
+}
+
+.subContainer2 .subtitle {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+
+  color: #4b5563;
+}
+
+.subContainer3 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.subContainer3 .title {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 110%;
+  display: flex;
+  align-items: center;
+
+  color: #4b5563;
+}
+
+.subContainer3 .inputField1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 16px;
+
+  width: 302px;
+  height: 52px;
+}
+
+.subContainer3 .inputField2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+
+  background: #ffffff;
+  border-radius: 8px;
+}

@@ -1,0 +1,76 @@
+.wrapper {
+  margin-top: 20px;
+  padding: 20px 24px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px 24px;
+  gap: 10px;
+
+  background: #ffffff;
+  border-radius: 20px;
+}
+
+.title {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 130%;
+  display: flex;
+  align-items: center;
+
+  color: #111928;
+}
+
+.profile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 8px;
+
+  width: 130px;
+  height: 42px;
+}
+
+.info {
+  width: 220px;
+}
+
+.name {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 150%;
+}
+
+.profession {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+
+  color: #697077;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skills .chip {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 2px 12px;
+
+  background: #f3f4f6;
+  border-radius: 6px;
+}
