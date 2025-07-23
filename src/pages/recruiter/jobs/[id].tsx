@@ -1,9 +1,12 @@
 import RecruiterLayout from "@/layouts/RecruiterLayout/RecruiterLayout";
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Container, Paper, Typography } from "@mui/material";
 import CandidateTable from "@/components/CandidateListTable/CandidateListTable";
+import { useApply } from "@/context/ApplyContext";
 import styles from "./style.module.css";
 
 export default function JobDetailPage() {
+  const { hasApplied } = useApply();
+
   return (
     <RecruiterLayout>
       <Container
@@ -12,6 +15,13 @@ export default function JobDetailPage() {
         disableGutters
         className={styles.container}
       >
+        {hasApplied && (
+          <Paper sx={{ p: 2, mb: 2 }}>
+            <Typography fontWeight="bold">
+              A user has applied to this job
+            </Typography>
+          </Paper>
+        )}
         <Box sx={{ pl: 0, ml: 0 }}>
           <Typography className={styles.listingsTitle}>Job Listings</Typography>
           <CandidateTable />
