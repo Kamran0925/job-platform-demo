@@ -18,8 +18,12 @@ A modern, responsive job board platform built using **Next.js 13**, **Material U
 
 ---
 
-## 📦 Project Structure
+## 📁 Folder Structure
 
+<details>
+  <summary><code>/src</code> structure (click to expand)</summary>
+
+```bash
 /src
 ├── components
 │   ├── Header.tsx
@@ -27,45 +31,38 @@ A modern, responsive job board platform built using **Next.js 13**, **Material U
 │   ├── JobCard.tsx
 │   ├── JobDetails.tsx
 │   └── ConfirmationDialog.tsx
-│
+
 ├── layouts
 │   ├── RecruiterLayout.tsx
 │   └── UserLayout.tsx
-│
+
 ├── pages
 │   ├── auth
 │   │   └── login.tsx
 │   ├── recruiter
 │   │   └── jobs
-│   │       ├── index.tsx       # Recruiter Job List
-│   │       └── \[id].tsx        # Job Detail + Applicants
+│   │       ├── index.tsx      # Recruiter job list
+│   │       └── [id].tsx       # Job detail with applicants
 │   ├── user
 │   │   └── jobs
-│   │       ├── index.tsx       # User Job List
-│   │       └── \[id].tsx        # Job Detail + Apply
-│   └── \_app.tsx
-│
+│   │       ├── index.tsx      # User job list
+│   │       └── [id].tsx       # Job detail + apply
+│   └── _app.tsx
+
 ├── theme
-│   └── theme.ts               # Custom MUI Theme
-│
+│   └── theme.ts               # MUI theme config
+
 ├── types
-│   └── job.ts                 # Interfaces & Types
-│
+│   └── job.ts                 # TS interfaces
+
 ├── utils
-│   └── dummyData.ts          # Hardcoded Jobs/Applicants
-│
+│   └── dummyData.ts          # Mock job/applicant data
+
 └── hooks
-└── useAuth.ts            # Dummy Auth Logic
+    └── useAuth.ts            # Mock auth logic
+```
 
----
-
-## 🖥️ Screenshots
-
-| Recruiter Dashboard         | Job Detail with Applicants       | User Job Listings            |
-|----------------------------|----------------------------------|------------------------------|
-| ![Recruiter Jobs](./screenshots/property-listings-page.png) | ![Job Details](./screenshots/tenancy-details-page.png) | ![User Jobs](./screenshots/landing-page.png) |
-
-> ℹ️ *All screenshots available in `/screenshots` folder.*
+</details>
 
 ---
 
