@@ -115,9 +115,7 @@ MIT License. Feel free to fork and build upon this project.
 
 ## ✨ Author
 
-Made with ❤️ by **Kamran Rizwan**
+Made by **Kamran Rizwan**
 
-* GitHub: [@kamran-rizwan](https://github.com/kamran-rizwan)
-* Portfolio: [kamranrizwan.vercel.app](https://kamranrizwan.vercel.app)
 
 
