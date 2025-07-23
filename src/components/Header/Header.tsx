@@ -1,19 +1,31 @@
-import { AppBar, Toolbar, Typography, Box } from "@mui/material";
+import { Avatar, Box, Button, TextField } from "@mui/material";
+import Image from "next/image";
+import styles from "./Header.module.css";
 
-interface HeaderProps {
-  title: string;
-}
-
-export default function Header({ title }: HeaderProps) {
+export default function Header() {
   return (
-    <AppBar position="static" color="primary" elevation={1}>
-      <Toolbar>
-        <Box flexGrow={1}>
-          <Typography variant="h6" component="div">
-            {title}
-          </Typography>
+    <Box className={styles.container}>
+      <Box className={styles.subContainer}>
+        <TextField className={styles.inputField} placeholder="Search for..." />
+        <Button className={styles.btn}>
+          <Image src="/assets/plus.svg" alt="plus" width={16} height={16} />
+          New Job
+        </Button>{" "}
+        <Box className={styles.iconContainer}>
+          <Image
+            src="/assets/settings.svg"
+            alt="settings"
+            width={18}
+            height={18}
+          />
         </Box>
-      </Toolbar>
-    </AppBar>
+        <Box className={styles.iconContainer}>
+          <Image src="/assets/bell.svg" alt="bell" width={16} height={20} />
+        </Box>
+        <Box>
+          <Avatar src="/assets/profile-picture-1.png" alt="profile" />
+        </Box>
+      </Box>
+    </Box>
   );
 }
