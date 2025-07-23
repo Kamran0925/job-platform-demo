@@ -1,6 +1,6 @@
 import { Modal, Box, Typography, Button, Stack } from "@mui/material";
-import styles from "./AuthModal.module.css";
 import classNames from "classnames";
+import styles from "./AuthModal.module.css";
 
 export default function AuthModal({
   open,
@@ -12,9 +12,6 @@ export default function AuthModal({
   return (
     <Modal open={open}>
       <Box className={classNames(styles.modalContainer)}>
-        <Typography variant="h5" className={styles.title}>
-          Welcome! 👋
-        </Typography>
         <Typography variant="body1" className={styles.subtitle}>
           Are you a recruiter or a job seeker? Choose your role to continue.
         </Typography>
