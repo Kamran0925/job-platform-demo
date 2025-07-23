@@ -1,6 +1,6 @@
 import { Box, Container, Typography } from "@mui/material";
 import Sidebar from "../../components/SideBar/SideBar";
-import Header from "@/components/Header";
+import Header from "@/components/Header/Header";
 import StatCard from "@/components/StatCard/StatCard";
 import { jobStatistics } from "@/utils/data";
 import styles from "./RecruiterLayout.module.css";
