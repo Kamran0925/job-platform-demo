@@ -21,10 +21,6 @@
   border-radius: 50%;
 }
 
-.card .warningBackground {
-  background-color: #fdf6b2;
-}
-
 .card .cardInfo {
   display: flex;
   flex-direction: column;

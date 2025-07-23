@@ -4,11 +4,11 @@
   left: 223px;
   width: 100%;
   padding: 0;
+  background-color: #f3f4f6;
 }
 
 .mainContent2 {
   padding: 20px 40px;
-  background-color: lightgray;
 }
 
 .title {
