@@ -36,7 +36,9 @@ const SideBar = () => {
             <ListItemIcon sx={{ minWidth: 0 }}>{<link.icon />}</ListItemIcon>
             <ListItemText
               primary={link.label}
-              className={classNames(styles.navItemText)}
+              className={classNames(
+                link.label === "Job Listings" && styles.activeNavItem
+              )}
               disableTypography
             />
           </ListItemButton>

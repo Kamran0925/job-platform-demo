@@ -33,7 +33,7 @@ const candidateList = [
     title: "Product Manager",
     location: "Stockholm",
     skills: ["IT", "Social", "Recruiting", "HR", "Design"],
-    status: "In review",
+    status: "InReview",
     match: 90,
   },
   {
@@ -57,7 +57,7 @@ const candidateList = [
     title: "Product Manager",
     location: "Stockholm",
     skills: ["IT", "Social", "Recruiting", "HR", "Design"],
-    status: "In review",
+    status: "InReview",
     match: 90,
   },
   {
@@ -86,9 +86,12 @@ const candidateList = [
   },
 ];
 
-const statusColors = {
+const statusColors: Record<
+  string,
+  "success" | "warning" | "info" | "secondary" | "default" | "primary" | "error"
+> = {
   Hired: "success",
-  "In review": "warning",
+  InReview: "warning",
   Interview: "info",
   Applied: "secondary",
 };
@@ -108,7 +111,12 @@ const CandidateTable = () => {
   return (
     <>
       <JobPostingHeader />
-      <TableContainer component={Paper} sx={{ borderRadius: 3 }}>
+      <TableContainer
+        component={Paper}
+        sx={{
+          boxShadow: "none",
+        }}
+      >
         <Table>
           <TableHead>
             <TableRow>
@@ -131,7 +139,10 @@ const CandidateTable = () => {
                 </TableCell>
                 <TableCell>
                   <Box display="flex" alignItems="center" gap={1.5}>
-                    <Avatar src="/avatar.jpg" alt={candidate.name} />
+                    <Avatar
+                      src="/assets/profile-picture-2.png"
+                      alt={candidate.name}
+                    />
                     <Box>
                       <Typography fontWeight={600}>{candidate.name}</Typography>
                       <Typography variant="body2" color="text.secondary">
@@ -159,8 +170,7 @@ const CandidateTable = () => {
                   <Chip
                     label={candidate.status}
                     size="small"
-                    color={"default"}
-                    variant="outlined"
+                    color={statusColors[candidate.status]}
                   />
                 </TableCell>
                 <TableCell>

@@ -14,8 +14,6 @@
 }
 
 .cardInfo .title {
-  font-family: "Inter";
-  font-style: normal;
   font-weight: 500;
   font-size: 18px;
   line-height: 130%;
@@ -26,8 +24,6 @@
 }
 
 .cardInfo .subtitle {
-  font-family: "Inter";
-  font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 150%;
@@ -37,27 +33,31 @@
   color: #111928;
 }
 
+.chipContainer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 .chip {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   padding: 2px 12px;
-
   width: 96px;
   height: 25px;
-
-  background: #f3f4f6;
-  border-radius: 6px;
-
-  font-family: "Inter";
-  font-style: normal;
+  background: #f3f4f6 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 14px !important;
   line-height: 150%;
+  letter-spacing: 0%;
   text-align: center;
-
-  color: #111928;
 }
 
 .align1 {
@@ -75,13 +75,12 @@
   align-items: center;
   padding: 4px;
   gap: 8px;
-
   background: #e1effe;
   border-radius: 10px;
 }
 
 .align3 {
-  margin-top: 18px;
+  margin-top: 16px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -95,23 +94,20 @@
 }
 
 .subContainer1 .overviewTitle {
-  font-family: "Inter";
-  font-style: normal;
   font-weight: 600;
   font-size: 14px;
   line-height: 150%;
-
-  color: #4b5563;
+  letter-spacing: 0%;
 }
 
 .subContainer1 .description {
   font-family: "Roboto";
-  font-style: normal;
   font-weight: 400;
+  font-style: normal;
   font-size: 12px;
   line-height: 140%;
-
-  color: #5e6670;
+  letter-spacing: 0%;
+  padding-left: 16px;
 }
 
 .subContainer1 .paragraph {
@@ -127,10 +123,29 @@
   margin-top: 16px;
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: flex-end;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
   padding: 0px;
   gap: 16px;
+}
+
+.actionContainer .saveBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 12px;
+  gap: 8px;
+
+  background: #f3f4f6;
+  border-radius: 8px;
+  border: 0 !important;
+  font-family: Inter;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: 0%;
 }
 
 .actionContainer .button {
@@ -141,29 +156,10 @@
   padding: 8px 12px;
   gap: 8px;
 
-  background: #f3f4f6;
+  background: #1a56db;
   border-radius: 8px;
-  border: none;
-  font-family: "Inter";
-  font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 150%;
-
-  color: #3f83f8;
-}
-
-.actionContainer .buttonActive {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 8px 12px;
-  gap: 8px;
-
-  width: 132px;
-  height: 40px;
-
-  background: #1a56db;
-  border-radius: 8px;
+  letter-spacing: 0%;
 }

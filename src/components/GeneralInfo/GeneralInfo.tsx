@@ -6,14 +6,28 @@ import {
   ListItemText,
   Typography,
 } from "@mui/material";
-import { Email, Phone, LocationOn } from "@mui/icons-material";
+import Image from "next/image";
 import styles from "./GeneralInfo.module.css";
 
 const infoItems = [
-  { icon: <Email />, label: "stevesmith@gmail.com" },
-  { icon: <Phone />, label: "+46780000000" },
-  { icon: <LocationOn />, label: "Stockholm, Sweden" },
-  { icon: <LocationOn />, label: "190003050050" },
+  {
+    icon: <Image src="/assets/mail.svg" alt="email" width={18} height={18} />,
+    label: "stevesmith@gmail.com",
+  },
+  {
+    icon: <Image src="/assets/phone.svg" alt="email" width={18} height={18} />,
+    label: "+46780000000",
+  },
+  {
+    icon: (
+      <Image src="/assets/location.svg" alt="email" width={18} height={18} />
+    ),
+    label: "Stockholm, Sweden",
+  },
+  {
+    icon: <Image src="/assets/record.svg" alt="email" width={18} height={18} />,
+    label: "190003050050",
+  },
 ];
 
 const GeneralInfo = () => {

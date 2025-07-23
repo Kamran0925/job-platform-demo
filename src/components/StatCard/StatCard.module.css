@@ -25,11 +25,10 @@
   display: flex;
   flex-direction: column;
   gap: 23px;
+  max-width: 266px;
 }
 
 .card .cardTitle {
-  font-family: "Inter";
-  font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 130%;
@@ -37,9 +36,6 @@
 }
 
 .card .cardValue {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 600;
   font-size: 24px;
   line-height: 110%;
   color: #1f2a37;
@@ -47,8 +43,6 @@
 }
 
 .card .cardPercentage {
-  font-family: "Inter";
-  font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 150%;

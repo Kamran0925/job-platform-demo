@@ -5,7 +5,7 @@ import styles from "./UserLayout.module.css";
 const UserLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
-      <Header title={"Logo"} />
+      <Header />
       <Box className={styles.container}>{children}</Box>
     </>
   );

@@ -21,6 +21,11 @@ export default function Dropdown({ label = "Dropdown" }: { label?: string }) {
         className={styles.dropdown}
         onClick={handleClick}
         endIcon={<ArrowDropDownIcon />}
+        sx={{
+          color: "#4B5563",
+          minWidth: "131px",
+          border: "1px solid #E5E7EB",
+        }}
       >
         {label}
       </Button>

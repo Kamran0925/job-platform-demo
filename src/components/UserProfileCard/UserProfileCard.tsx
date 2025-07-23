@@ -1,7 +1,19 @@
 import { Avatar, Typography, Button, Box } from "@mui/material";
+import Image from "next/image";
 import styles from "./UserProfileCard.module.css";
 
-const skills = ["React", "Node.js", "TypeScript", "GraphQL"];
+const skills = [
+  "Communication",
+  "Teamwork",
+  "Jira",
+  "Collaboration",
+  "Faciliation",
+  "Figma",
+  "Management",
+  "Canva",
+  "Adode XD",
+  "Public Speaking",
+];
 
 export default function UserProfileCard() {
   return (
@@ -24,7 +36,14 @@ export default function UserProfileCard() {
           </Box>
         ))}
       </Box>
-      <Button variant="outlined" size="small" className={styles.editBtn}>
+      <Button variant="outlined" className={styles.editBtn}>
+        <Image
+          src="/assets/notepad.svg"
+          alt="edit"
+          width={16}
+          height={16}
+          style={{ marginRight: 6 }}
+        />
         Edit Profile
       </Button>
     </Box>

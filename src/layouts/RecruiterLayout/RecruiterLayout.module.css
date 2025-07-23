@@ -11,14 +11,9 @@
   padding: 20px 40px;
 }
 
-.title {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 26px;
+.mainContent .mainContent2 .title {
+  font-size: 36px !important;
   line-height: 130%;
-  display: flex;
-  align-items: center;
   color: #4b5563;
 }
 

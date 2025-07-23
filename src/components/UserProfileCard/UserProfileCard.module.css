@@ -16,18 +16,13 @@
 }
 
 .name {
-  font-family: "Inter";
-  font-style: normal;
   font-weight: 600;
   font-size: 26px !important;
   line-height: 130%;
-
   color: #111928;
 }
 
 .title {
-  font-family: "Inter";
-  font-style: normal;
   font-weight: 400;
   font-size: 16px !important;
   line-height: 130%;
@@ -42,7 +37,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .skillChip {
@@ -55,8 +50,6 @@
   background: #e1effe;
   border-radius: 6px;
 
-  font-family: "Inter";
-  font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 150%;
@@ -80,8 +73,6 @@
 
   background: #f3f4f6;
   border-radius: 8px;
-
-  font-family: "Inter";
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
