@@ -31,12 +31,7 @@ export default function SearchSortRow() {
         height="37px"
         width="222px"
       >
-        <Typography
-          fontSize="14px"
-          fontWeight="500"
-          fontFamily="Inter"
-          color="#4B5563"
-        >
+        <Typography fontSize="16px" fontWeight="400" color="#4B5563">
           Sort by:
         </Typography>
         <Select

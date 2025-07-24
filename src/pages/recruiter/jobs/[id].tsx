@@ -26,8 +26,16 @@ export default function JobDetailPage() {
         className={styles.container}
       >
         {hasApplied && (
-          <Paper sx={{ p: 2, mb: 2 }}>
-            <Typography fontWeight="bold">
+          <Paper
+            sx={{
+              p: 2,
+              mb: 2,
+              boxShadow: "none",
+              background: "#1A56DB",
+              color: "#FFF",
+            }}
+          >
+            <Typography fontSize={"18px"} fontWeight={500}>
               A user has applied to this job
             </Typography>
           </Paper>
@@ -47,7 +55,7 @@ export default function JobDetailPage() {
             </Button>
           </Link>
         </Stack>
-        <Box sx={{ pl: 0, ml: 0 }}>
+        <Box sx={{ pl: 0, ml: 0, mt: "20px" }}>
           <Typography className={styles.listingsTitle}>Job Listings</Typography>
           <SearchSortRow />
           <CandidateTable />

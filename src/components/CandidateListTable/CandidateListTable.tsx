@@ -16,8 +16,11 @@ import {
   MenuItem,
   Paper,
 } from "@mui/material";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import JobPostingHeader from "../JobPostingHeader/JobPostingHeader";
+import styles from "./CandidateListTable.module.css";
+import Image from "next/image";
 
 const candidateList = [
   {
@@ -109,27 +112,37 @@ const CandidateTable = () => {
   };
 
   return (
-    <>
+    <Box
+      sx={{
+        padding: "0 0 43px",
+        background: "#FFF",
+      }}
+    >
       <JobPostingHeader />
       <TableContainer
         component={Paper}
         sx={{
           boxShadow: "none",
           overflowX: "auto",
+          padding: "0 26px 0 8px",
         }}
       >
-        <Table sx={{ minWidth: 800 }}>
-          <TableHead>
+        <Table sx={{ borderRadius: "6px" }}>
+          <TableHead className={styles.rowHead}>
             <TableRow>
               <TableCell padding="checkbox">
                 <Checkbox />
               </TableCell>
-              <TableCell>Candidate</TableCell>
-              <TableCell>Location</TableCell>
-              <TableCell>Matching Skills</TableCell>
-              <TableCell>Status</TableCell>
-              <TableCell>Match Level</TableCell>
-              <TableCell align="right">Actions</TableCell>
+              <TableCell className={styles.headerCell}>Candidate</TableCell>
+              <TableCell className={styles.headerCell}>Location</TableCell>
+              <TableCell className={styles.headerCell}>
+                Matching Skills
+              </TableCell>
+              <TableCell className={styles.headerCell}>Status</TableCell>
+              <TableCell className={styles.headerCell}>Match Level</TableCell>
+              <TableCell align="right" className={styles.headerCell}>
+                Actions
+              </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -147,8 +160,20 @@ const CandidateTable = () => {
                       src="/assets/profile-picture-2.png"
                       alt={candidate.name}
                     />
-                    <Box>
-                      <Typography fontWeight={600}>{candidate.name}</Typography>
+                    <Box
+                      sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                        width: "115px",
+                      }}
+                    >
+                      <Typography
+                        color="#21272A"
+                        fontWeight={600}
+                        fontSize={"14px"}
+                      >
+                        {candidate.name}
+                      </Typography>
                       <Typography variant="body2" color="text.secondary">
                         {candidate.title}
                       </Typography>
@@ -159,30 +184,46 @@ const CandidateTable = () => {
                   <Typography fontWeight={600}>{candidate.location}</Typography>
                 </TableCell>
                 <TableCell>
-                  <Box display="flex" gap={1} flexWrap="wrap">
+                  <Box className={styles.skillsWrapper}>
                     {candidate.skills.map((skill, idx) => (
                       <Chip
                         key={idx}
                         label={skill}
                         size="small"
-                        variant={idx >= 4 ? "outlined" : "filled"}
+                        className={styles.badgeChip}
+                        variant={"filled"}
                       />
                     ))}
                   </Box>
                 </TableCell>
                 <TableCell>
-                  <Chip
-                    label={candidate.status}
-                    size="small"
-                    color={statusColors[candidate.status]}
-                  />
+                  <Box className={styles.disabledDropdown}>
+                    <Typography className={styles.labelText}>
+                      {candidate.status}
+                    </Typography>
+                    <ArrowDropDownIcon fontSize="small" />
+                  </Box>
                 </TableCell>
                 <TableCell>
-                  <Typography fontWeight={500}>{candidate.match}%</Typography>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "8px",
+                    }}
+                  >
+                    <Image
+                      src="/stars.svg"
+                      alt="Stars"
+                      width={20}
+                      height={20}
+                    />
+                    <Typography fontWeight={500}>{candidate.match}%</Typography>
+                  </Box>
                 </TableCell>
                 <TableCell align="right">
                   <IconButton onClick={handleMenuClick}>
-                    <MoreVertIcon />
+                    <MoreHorizIcon style={{ color: "#3F83F8" }} />
                   </IconButton>
                   <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
                     <MenuItem onClick={handleClose}>View</MenuItem>
@@ -195,7 +236,7 @@ const CandidateTable = () => {
           </TableBody>
         </Table>
       </TableContainer>
-    </>
+    </Box>
   );
 };
 

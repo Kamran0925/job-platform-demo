@@ -1,5 +1,5 @@
 import AuthModal from "@/components/AuthModal.tsx/AuthModal";
-import useAuth from "@/hooks/useAuth";
+import useAuth from "@/context/AuthContext";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
