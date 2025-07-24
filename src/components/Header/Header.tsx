@@ -32,7 +32,14 @@ export default function Header() {
         </Typography>
       )}
       {userType == "user" && (
-        <Box>
+        <Box
+          sx={{
+            display: {
+              xs: "none",
+              md: "flex",
+            },
+          }}
+        >
           <Tabs value={"Home"} aria-label="job tabs">
             <Tab
               label="Home"
@@ -45,7 +52,13 @@ export default function Header() {
         </Box>
       )}
       {userType !== "user" && (
-        <Box className={styles.subContainer}>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "flex-end",
+          }}
+          className={styles.subContainer}
+        >
           <SearchInput />
           <Button className={styles.btn}>
             <Image src="/assets/plus.svg" alt="plus" width={16} height={16} />

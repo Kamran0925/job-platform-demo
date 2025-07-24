@@ -154,11 +154,7 @@ const CandidateTable = () => {
                         width: "115px",
                       }}
                     >
-                      <Typography
-                        color="#21272A"
-                        fontWeight={600}
-                        fontSize={"14px"}
-                      >
+                      <Typography color="#21272A" fontSize={"14px"}>
                         {candidate.name}
                       </Typography>
                       <Typography variant="body2" color="text.secondary">
