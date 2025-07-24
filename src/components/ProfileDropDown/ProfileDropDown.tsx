@@ -1,25 +1,24 @@
 import { Avatar, Menu, IconButton, Box } from "@mui/material";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-import { useState } from "react";
+import useAuth from "@/context/AuthContext";
+import { useRouter } from "next/router";
 
 const ProfileDropdown = () => {
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const { logout } = useAuth();
+  const router = useRouter();
 
-  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
+  const handleLogoClick = () => {
+    logout();
+    router.push("/");
   };
 
   return (
     <Box display="flex" justifyContent="flex-end" alignItems="center">
-      <IconButton onClick={handleClick}>
+      <IconButton onClick={handleLogoClick}>
         <Avatar src="/assets/profile-picture-1.png" alt="profile" />
       </IconButton>
       <ArrowDropDownIcon sx={{ color: "#6B7280" }} />
-      <Menu
-        anchorEl={anchorEl}
-        open={false}
-        onClose={() => setAnchorEl(null)}
-      />
+      <Menu open={false} />
     </Box>
   );
 };

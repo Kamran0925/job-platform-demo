@@ -31,6 +31,13 @@
   color: #666;
 }
 
+.actionButtons .actionItem .actions {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 130%;
+  letter-spacing: 0%;
+}
+
 .actionItem svg {
   color: #666;
 }
@@ -60,35 +67,53 @@
   padding: 6px 16px !important;
 }
 
-.tabsSection {
+.align {
   display: flex;
-  gap: 10px;
-  margin-top: 20px;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 10px;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.tabsContainer {
+  display: flex;
+  gap: 24px;
+  height: 48px;
+  max-width: 753px;
+  align-items: center;
 }
 
 .tab {
-  background-color: #f0f0f0 !important;
-  color: #555 !important;
-  font-weight: 500 !important;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  height: 48px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #1f2a37;
 }
 
-.activeTab {
-  background-color: #e0e7ff !important;
-  color: #3f51b5 !important;
-  font-weight: 600 !important;
+.badge {
+  height: 22px;
+  padding: 2px 10px;
+  background: #e1effe;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 500;
+  color: #1f2a37;
 }
 
-.descriptionSection {
-  margin-top: 20px;
-  background-color: #f9f9f9;
-  padding: 15px;
-  border-radius: 8px;
-  border: 1px solid #eee;
+.addTab {
+  cursor: pointer;
 }
 
-.descriptionText {
-  color: #444;
-  line-height: 1.6;
+.addTabText {
+  color: #6b7280;
+  font-size: 14px;
 }

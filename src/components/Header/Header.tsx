@@ -3,15 +3,20 @@ import { Button, Typography } from "@mui/material";
 import Image from "next/image";
 import { Tabs, Tab, Box } from "@mui/material";
 import classNames from "classnames";
-import useAuth from "@/hooks/useAuth";
 import { useRouter } from "next/navigation";
 import ProfileDropdown from "../ProfileDropDown/ProfileDropDown";
 import SearchInput from "../SearchFor/SearchFor";
 import styles from "./Header.module.css";
+import useAuth from "@/context/AuthContext";
 
 export default function Header() {
-  const { userType } = useAuth();
+  const { userType, logout } = useAuth();
   const router = useRouter();
+
+  const handleLogoClick = () => {
+    logout();
+    router.push("/");
+  };
 
   return (
     <Box
@@ -23,7 +28,7 @@ export default function Header() {
       }}
     >
       {userType == "user" && (
-        <Typography className={styles.logo} onClick={() => router.push("/")}>
+        <Typography className={styles.logo} onClick={handleLogoClick}>
           Logo
         </Typography>
       )}
@@ -55,7 +60,7 @@ export default function Header() {
               height={18}
             />
           </Box>
-          <Box className={styles.iconContainer}>
+          <Box className={styles.iconContainer} onClick={handleLogoClick}>
             <Image src="/assets/bell.svg" alt="bell" width={16} height={20} />
           </Box>
           <Box>
@@ -67,12 +72,14 @@ export default function Header() {
         <Box className={styles.btnContainer}>
           <Button
             variant="outlined"
+            onClick={handleLogoClick}
             className={classNames(styles.button, styles.outlined)}
           >
             Login
           </Button>
           <Button
             variant="contained"
+            onClick={handleLogoClick}
             className={classNames(styles.button, styles.contained)}
           >
             Sign Up

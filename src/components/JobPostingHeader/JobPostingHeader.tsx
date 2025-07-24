@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Box,
-  Typography,
-  IconButton,
-  Chip,
-  Button,
-  Avatar,
-} from "@mui/material";
+import { Box, Typography, IconButton } from "@mui/material";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import ShareIcon from "@mui/icons-material/Share";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
@@ -14,11 +7,18 @@ import EditIcon from "@mui/icons-material/Edit";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
-import PublicIcon from "@mui/icons-material/Public";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter"; // For the '2' icon
 import styles from "./JobPostingHeader.module.css"; // Import CSS module
+import CalendarIcon from "../../../public/assets/icons/calender";
+import Image from "next/image";
 
+const tabItems = [
+  { label: "Matches", count: 300 },
+  { label: "Applied", count: 150 },
+  { label: "In Review", count: 75 },
+  { label: "Offered", count: 0 },
+  { label: "Rejected", count: 0 },
+];
 const JobPostingHeader = () => {
   return (
     <Box className={styles.headerContainer}>
@@ -29,18 +29,27 @@ const JobPostingHeader = () => {
         <Box className={styles.actionButtons}>
           <Box className={styles.actionItem}>
             <VisibilityIcon fontSize="small" />
-            <Typography variant="body2">View</Typography>
+            <Typography variant="body2" className={styles.actions}>
+              View
+            </Typography>
           </Box>
           <Box className={styles.actionItem}>
             <ShareIcon fontSize="small" />
-            <Typography variant="body2">Share</Typography>
+            <Typography variant="body2" className={styles.actions}>
+              Share
+            </Typography>
           </Box>
           <Box className={styles.actionItem}>
             <MailOutlineIcon fontSize="small" />
-            <Typography variant="body2">Invite</Typography>
+            <Typography variant="body2" className={styles.actions}>
+              Invite
+            </Typography>
           </Box>
           <IconButton size="small">
             <EditIcon fontSize="small" />
+            <Typography variant="body2" className={styles.actions}>
+              Edit
+            </Typography>
           </IconButton>
         </Box>
       </Box>
@@ -55,58 +64,42 @@ const JobPostingHeader = () => {
           <Typography variant="body2">Stockholm, Sweden</Typography>
         </Box>
         <Box className={styles.infoItem}>
-          <AttachMoneyIcon fontSize="small" />
-          <Typography variant="body2">800 SEK</Typography>
-        </Box>
-        <Box className={styles.infoItem}>
           <CalendarTodayIcon fontSize="small" />
           <Typography variant="body2">01 Sep 2025</Typography>
         </Box>
-        <Box sx={{ flexGrow: 1 }} />
         <Box className={styles.infoItem}>
-          <PublicIcon fontSize="small" />
-          <Typography variant="body2">Replacere.org/Job/Ido</Typography>
+          <AttachMoneyIcon fontSize="small" />
+          <Typography variant="body2">800 SEK</Typography>
         </Box>
-        <Avatar sx={{ width: 24, height: 24 }}>
-          <AccountCircleIcon />
-        </Avatar>
+        <br />
+        <Box className={styles.infoItem}>
+          <CalendarIcon fill="#111928" />
+          <Typography variant="body2">
+            defining the vision for a product, setting goals, prioritizing
+            features, and coordinating between design, engineering, and business
+            teams to deliver valuable products that meet user and market needs.
+          </Typography>
+        </Box>
       </Box>
+      <Box className={styles.align}>
+        <Box className={styles.tabsContainer}>
+          {tabItems.map((item, idx) => (
+            <Box className={styles.tab} key={idx}>
+              <Typography className={styles.tabLabel}>{item.label}</Typography>
+              {item.count > 0 && (
+                <Box className={styles.badge}>{item.count}</Box>
+              )}
+            </Box>
+          ))}
 
-      <Box className={styles.middleSectionRow}>
-        <Typography variant="body2" sx={{ fontWeight: 600 }}>
-          Hired:
-        </Typography>
-        <Typography variant="body2" sx={{ ml: 0.5 }}>
-          Stockholm, Sweden
-        </Typography>
-        <Typography variant="body2" sx={{ fontWeight: 600, ml: 2 }}>
-          Starts:
-        </Typography>
-        <Typography variant="body2" sx={{ ml: 0.5 }}>
-          01 Sep 2025
-        </Typography>
-        <Box sx={{ flexGrow: 1 }} />
-        <Button variant="contained" size="small" className={styles.button}>
-          Chat with Jane
-        </Button>
-        <Button variant="outlined" size="small" className={styles.button}>
-          Remove
-        </Button>
-      </Box>
-
-      <Box className={styles.tabsSection}>
-        <Chip label="All Candidates" clickable className={styles.activeTab} />
-        <Chip label="New Candidates" clickable className={styles.tab} />
-        <Chip label="Shortlisted" clickable className={styles.tab} />
-      </Box>
-
-      <Box className={styles.descriptionSection}>
-        <Typography variant="body1" className={styles.descriptionText}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
-        </Typography>
+          <Box className={styles.addTab}>
+            <Typography className={styles.addTabText}>+ Add Tab</Typography>
+          </Box>
+        </Box>
+        <Box className={styles.infoItem}>
+          <Image src="/grid.svg" alt="Grid Icon" width={24} height={24} />
+          <Typography variant="body2">Cards View</Typography>
+        </Box>
       </Box>
     </Box>
   );

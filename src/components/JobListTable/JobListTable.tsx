@@ -17,7 +17,7 @@ import {
   PaginationItem,
 } from "@mui/material";
 import NextLink from "next/link";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
+import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import Dropdown from "../DropDown/DropDown";
 import styles from "./JobListTable.module.css";
 import SearchInput from "../SearchFor/SearchFor";
@@ -89,24 +89,21 @@ const JobListTable = () => {
         }}
         className={styles.tableContainer}
       >
-        <Table
-          className={styles.table}
-          sx={{
-            minWidth: 800,
-          }}
-        >
+        <Table className={styles.table}>
           <TableHead>
             <TableRow>
               <TableCell padding="checkbox">
                 <Checkbox />
               </TableCell>
-              <TableCell>Job Title</TableCell>
-              <TableCell>Job Type</TableCell>
-              <TableCell>Date Posted</TableCell>
-              <TableCell>Applicants</TableCell>
-              <TableCell>Views</TableCell>
-              <TableCell>Status</TableCell>
-              <TableCell align="right">Actions</TableCell>
+              <TableCell className={styles.headerCell}>Job Title</TableCell>
+              <TableCell className={styles.headerCell}>Job Type</TableCell>
+              <TableCell className={styles.headerCell}>Date Posted</TableCell>
+              <TableCell className={styles.headerCell}>Applicants</TableCell>
+              <TableCell className={styles.headerCell}>Views</TableCell>
+              <TableCell className={styles.headerCell}>Status</TableCell>
+              <TableCell align="right" className={styles.headerCell}>
+                Actions
+              </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -139,13 +136,27 @@ const JobListTable = () => {
                   <Chip
                     label={job.status}
                     size="small"
-                    color={"default"}
                     variant="outlined"
+                    sx={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      padding: "2px 10px",
+                      height: "20px",
+                      width: "77px",
+                      background: "#F3F4F6",
+                      borderRadius: "6px",
+                      fontFamily: "Inter",
+                      fontWeight: 500,
+                      fontSize: "12px",
+                      lineHeight: "18px",
+                      border: "none",
+                    }}
                   />
                 </TableCell>
                 <TableCell align="right">
                   <IconButton>
-                    <MoreVertIcon />
+                    <MoreHorizIcon style={{ color: "#3F83F8" }} />
                   </IconButton>
                   <Menu open={false}>
                     <MenuItem>View</MenuItem>
@@ -162,7 +173,7 @@ const JobListTable = () => {
             display: "flex",
             justifyContent: "flex-end",
             width: "100%",
-            mt: 2,
+            mb: "20px",
           }}
         >
           <Pagination

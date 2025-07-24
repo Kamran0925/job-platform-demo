@@ -11,15 +11,14 @@ import {
 import classNames from "classnames";
 import { NAV_LINKS } from "./NavLinks";
 import Image from "next/image";
-import useAuth from "@/hooks/useAuth";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import styles from "./SideBar.module.css";
+import useAuth from "@/context/AuthContext";
 
 const SideBar = () => {
   const router = useRouter();
   const { logout } = useAuth();
-  const [isHovered, setHovered] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const handleLogoClick = () => {
