@@ -1,6 +1,6 @@
 # 💼 Job Platform Demo
 
-A modern, responsive job board platform built using **Next.js 13**, **Material UI**, and **TypeScript**. It supports two user roles — **Recruiters** and **Job Seekers**, each with dedicated pages, views, and actions.
+A modern pixel-perfect and responsive job board platform built using **Next.js 13**, **Material UI**, and **TypeScript**. It supports two user roles — **Recruiters** and **Job Seekers**, each with dedicated pages, views, and actions.
 
 🚀 **Live Preview**: [job-platform-demo.vercel.app](https://job-platform-demo.vercel.app)
 
@@ -13,7 +13,7 @@ A modern, responsive job board platform built using **Next.js 13**, **Material U
 - **UI Kit:** [Material UI (MUI)](https://mui.com/)
 - **Styling:** Custom MUI theme
 - **Routing:** App Directory Routing
-- **Auth:** Dummy hook-based logic
+- **Auth:** Dummy context-based authentication logic
 - **Deployment:** Vercel
 
 ---
@@ -102,14 +102,14 @@ Visit: [http://localhost:3000](http://localhost:3000)
 
 ## 👤 User Roles
 
-* **Recruiter**: Post jobs, view applicants.
+* **Recruiter**: View job listings, view applicant apply status and details.
 * **User/Job Seeker**: Browse jobs, apply, and track application status.
 
 ---
 
 ## 📄 License
 
-MIT License. Feel free to fork and build upon this project.
+MIT License. All rights reserved.
 
 ---
 
