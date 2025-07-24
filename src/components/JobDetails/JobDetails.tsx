@@ -90,7 +90,8 @@ const JobDetails = () => {
               alignItems: "center",
               padding: "14px 24px",
               gap: "8px",
-              width: "139px",
+              maxWidth: "139px",
+              width: "100%",
               height: "51px",
               backgroundColor: "#1A56DB",
               borderRadius: "8px",
@@ -150,12 +151,16 @@ const JobDetails = () => {
         />
         <Info icon={<Work fontSize="small" />} text="Intelligent Apps" bold />
         <Info
-          icon={<img src="/assets/dollar.svg" alt="Salary" height={18} />}
+          icon={
+            <img src="/assets/dollar.svg" alt="Salary" height={16} width={16} />
+          }
           text="100,000 EUR/yr"
           bold
         />
         <Info
-          icon={<img src="/assets/key.svg" alt="Salary" height={18} />}
+          icon={
+            <img src="/assets/key.svg" alt="Salary" height={16} width={16} />
+          }
           text=""
           component={
             <Stack direction="row" spacing={1}>
@@ -242,7 +247,7 @@ const Section = ({
   paragraph?: boolean;
 }) => (
   <Box>
-    <Typography variant="subtitle1" fontWeight={600} mb={1}>
+    <Typography variant="subtitle1" mb={1}>
       {title}
     </Typography>
     {paragraph ? (

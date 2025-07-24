@@ -82,7 +82,13 @@ const JobPostingHeader = () => {
         <br />
         <Box className={styles.infoItem}>
           <CalendarIcon fill="#111928" />
-          <Typography variant="body2">
+          <Typography
+            sx={{
+              width: "70%",
+              marginLeft: "10px",
+            }}
+            variant="body2"
+          >
             defining the vision for a product, setting goals, prioritizing
             features, and coordinating between design, engineering, and business
             teams to deliver valuable products that meet user and market needs.

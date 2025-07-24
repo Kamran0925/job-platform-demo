@@ -68,14 +68,14 @@ export default function JobOverviewCard({ id }: { id: string }) {
                 width: "100%",
                 display: "flex",
                 alignItems: { xs: "flex-start", md: "center" },
-                justifyContent: "center",
+                justifyContent: { xs: "center", md: "flex-start" },
                 flexDirection: {
                   xs: "column",
                   md: "row",
                 },
                 gap: {
                   xs: "20px",
-                  md: "0px",
+                  md: "10px",
                 },
               }}
             >

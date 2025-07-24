@@ -10,17 +10,30 @@ export default function JobDetailsPage() {
   return (
     <UserLayout>
       <Box className={styles.container1}>
-        <Box className={styles.subContainer1}>
+        <Box
+          sx={{
+            flexDirection: {
+              xs: "row",
+              md: "column",
+            },
+            flexBasis: {
+              xs: "1",
+            },
+            flexWrap: "wrap",
+          }}
+          className={styles.subContainer1}
+        >
           <UserProfileCard />
           <GeneralInfo />
           <UserIntro />
-          <Button variant="text" sx={{ backgroundColor: "transparent" }}>
-            View Saved Jobs
-          </Button>
+          <Button className={styles.savedJobsButton}>View Saved Jobs</Button>
         </Box>
         <Box
           className={styles.subContainer2}
-          sx={{ backgroundColor: "#FFF !important", padding: "40px" }}
+          sx={{
+            backgroundColor: "#FFF !important",
+            padding: { xs: "0px", md: "40px" },
+          }}
         >
           <JobDetails />
         </Box>

@@ -53,7 +53,8 @@
 .infoItem {
   display: flex;
   align-items: center;
-  gap: 5px;
+  justify-content: flex-start;
+  gap: 10px;
   color: #555;
 }
 

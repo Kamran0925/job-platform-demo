@@ -71,7 +71,10 @@ const JobListTable = () => {
       >
         <Box
           sx={{
-            display: "flex",
+            display: {
+              xs: "none",
+              md: "flex",
+            },
             justifyContent: "center",
             gap: "20px",
             flexWrap: "wrap",
