@@ -13,7 +13,15 @@ import styles from "./style.module.css";
 export default function UserJobListingsPage() {
   return (
     <UserLayout>
-      <Box className={styles.container1}>
+      <Box
+        sx={{
+          flexDirection: {
+            xs: "column",
+            md: "row",
+          },
+        }}
+        className={styles.container1}
+      >
         <Box className={styles.subContainer1}>
           <UserProfileCard />
           <GeneralInfo />
@@ -21,7 +29,12 @@ export default function UserJobListingsPage() {
           <Button className={styles.savedJobsButton}>View Saved Jobs</Button>
         </Box>
 
-        <Box className={styles.subContainer2}>
+        <Box
+          sx={{
+            padding: { xs: 0 },
+          }}
+          className={styles.subContainer2}
+        >
           <Typography className={styles.trendingTitle}>
             Trending Job Postings
           </Typography>
@@ -34,7 +47,12 @@ export default function UserJobListingsPage() {
           ))}
         </Box>
 
-        <Box className={styles.subContainer3}>
+        <Box
+          sx={{
+            display: { xs: "none", lg: "flex" },
+          }}
+          className={styles.subContainer3}
+        >
           <Typography className={styles.title}>Search jobs</Typography>
           <TextField
             placeholder="Title or Keywords"

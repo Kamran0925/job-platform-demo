@@ -1,13 +1,5 @@
-import {
-  Box,
-  TextField,
-  Typography,
-  MenuItem,
-  Select,
-  InputAdornment,
-} from "@mui/material";
+import { Box, Typography, MenuItem, Select } from "@mui/material";
 import { useState } from "react";
-import Image from "next/image";
 import SearchInput from "../SearchFor/SearchFor";
 
 export default function SearchSortRow() {
@@ -21,7 +13,9 @@ export default function SearchSortRow() {
       width="100%"
       mt={"20px"}
     >
-      <SearchInput />
+      <Box sx={{ display: { xs: "none", sm: "block" } }}>
+        <SearchInput />
+      </Box>
 
       <Box
         display="flex"
@@ -30,6 +24,10 @@ export default function SearchSortRow() {
         gap="16px"
         height="37px"
         width="222px"
+        sx={{
+          width: { xs: "100%", md: "222px" },
+          justifyContent: { xs: "flex-end", md: "center" },
+        }}
       >
         <Typography fontSize="16px" fontWeight="400" color="#4B5563">
           Sort by:

@@ -5,6 +5,7 @@
   padding: 30px;
   gap: 16px;
   width: 100%;
+  max-width: 800px;
   background: #ffffff;
   border-radius: 20px;
   padding: 30px;
@@ -92,16 +93,13 @@
 }
 
 .subContainer1 .overviewTitle {
-  font-weight: 600;
-  font-size: 14px;
+  font-size: 14px !important;
   line-height: 150%;
   letter-spacing: 0%;
 }
 
 .subContainer1 .description {
-  font-family: "Roboto";
   font-weight: 400;
-  font-style: normal;
   font-size: 12px;
   line-height: 140%;
   letter-spacing: 0%;
@@ -109,12 +107,11 @@
 }
 
 .subContainer1 .paragraph {
-  font-family: "Roboto";
-  font-style: normal;
   font-weight: 400;
   font-size: 12px;
   line-height: 140%;
   color: #5e6670;
+  width: 80%;
 }
 
 .actionContainer {
@@ -124,15 +121,13 @@
   justify-content: flex-end;
   align-items: center;
   width: 100%;
-  padding: 0px;
   gap: 16px;
+  flex-wrap: wrap;
+  flex-shrink: 1;
+  overflow-wrap: break-word;
 }
 
 .actionContainer .saveBtn {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
   padding: 8px 12px;
   gap: 8px;
 
@@ -146,13 +141,9 @@
 }
 
 .actionContainer .button {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
   padding: 8px 12px;
   gap: 8px;
-
+  box-shadow: none;
   background: #1a56db;
   border-radius: 8px;
   font-weight: 500;
@@ -176,4 +167,19 @@
   line-height: 150%;
   letter-spacing: 0%;
   color: #fff;
+}
+
+@media (max-width: 768px) {
+  .actionContainer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .actionContainer .saveBtn,
+  .actionContainer .button,
+  .actionContainer .disabledBtn {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
 }

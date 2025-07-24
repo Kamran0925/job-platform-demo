@@ -7,10 +7,10 @@ import EditIcon from "@mui/icons-material/Edit";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
-import BusinessCenterIcon from "@mui/icons-material/BusinessCenter"; // For the '2' icon
-import styles from "./JobPostingHeader.module.css"; // Import CSS module
+import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 import CalendarIcon from "../../../public/assets/icons/calender";
 import Image from "next/image";
+import styles from "./JobPostingHeader.module.css";
 
 const tabItems = [
   { label: "Matches", count: 300 },
@@ -26,7 +26,15 @@ const JobPostingHeader = () => {
         <Typography variant="h4" component="h1" className={styles.title}>
           Product Manager
         </Typography>
-        <Box className={styles.actionButtons}>
+        <Box
+          sx={{
+            display: {
+              xs: "none",
+              md: "flex",
+            },
+          }}
+          className={styles.actionButtons}
+        >
           <Box className={styles.actionItem}>
             <VisibilityIcon fontSize="small" />
             <Typography variant="body2" className={styles.actions}>
@@ -82,7 +90,15 @@ const JobPostingHeader = () => {
         </Box>
       </Box>
       <Box className={styles.align}>
-        <Box className={styles.tabsContainer}>
+        <Box
+          sx={{
+            display: {
+              xs: "none",
+              lg: "flex",
+            },
+          }}
+          className={styles.tabsContainer}
+        >
           {tabItems.map((item, idx) => (
             <Box className={styles.tab} key={idx}>
               <Typography className={styles.tabLabel}>{item.label}</Typography>

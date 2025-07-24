@@ -12,8 +12,6 @@ import {
   Checkbox,
   Chip,
   IconButton,
-  Menu,
-  MenuItem,
   Paper,
 } from "@mui/material";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
@@ -100,17 +98,6 @@ const statusColors: Record<
 };
 
 const CandidateTable = () => {
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
-
-  const handleMenuClick = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-
   return (
     <Box
       sx={{
@@ -222,14 +209,9 @@ const CandidateTable = () => {
                   </Box>
                 </TableCell>
                 <TableCell align="right">
-                  <IconButton onClick={handleMenuClick}>
+                  <IconButton>
                     <MoreHorizIcon style={{ color: "#3F83F8" }} />
                   </IconButton>
-                  <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
-                    <MenuItem onClick={handleClose}>View</MenuItem>
-                    <MenuItem onClick={handleClose}>Message</MenuItem>
-                    <MenuItem onClick={handleClose}>Remove</MenuItem>
-                  </Menu>
                 </TableCell>
               </TableRow>
             ))}

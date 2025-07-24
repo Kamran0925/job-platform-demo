@@ -6,7 +6,17 @@ const UserLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <Header />
-      <Box className={styles.container}>{children}</Box>
+      <Box
+        sx={{
+          padding: {
+            xs: "20px 40px",
+            md: "92px 80px",
+          },
+        }}
+        className={styles.container}
+      >
+        {children}
+      </Box>
     </>
   );
 };
