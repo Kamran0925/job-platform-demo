@@ -36,8 +36,14 @@ const SearchInput = ({
               />
             </InputAdornment>
           ),
+          sx: {
+            height: "41px",
+          },
         }}
         sx={{
+          "& .MuiOutlinedInput-root": {
+            height: "41px",
+          },
           "& .MuiInputBase-input": {
             fontWeight: 400,
             fontStyle: "normal",

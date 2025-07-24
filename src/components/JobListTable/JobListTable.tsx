@@ -16,7 +16,7 @@ import {
   Pagination,
   PaginationItem,
 } from "@mui/material";
-import NextLink from "next/link";
+import { useRouter } from "next/router";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import Dropdown from "../DropDown/DropDown";
 import styles from "./JobListTable.module.css";
@@ -24,6 +24,7 @@ import SearchInput from "../SearchFor/SearchFor";
 
 const jobList = [
   {
+    id: 0,
     title: "Senior UI/UX Designer",
     type: "Freelance",
     datePosted: "2025-02-10",
@@ -32,6 +33,7 @@ const jobList = [
     status: "Open",
   },
   {
+    id: 1,
     title: "Senior UI/UX Designer",
     type: "Extra Job",
     datePosted: "2025-01-15",
@@ -40,6 +42,7 @@ const jobList = [
     status: "Draft",
   },
   {
+    id: 2,
     title: "Senior UI/UX Designer",
     type: "Part time",
     datePosted: "2024-12-20",
@@ -51,6 +54,7 @@ const jobList = [
 
 const JobListTable = () => {
   const [page, setPage] = useState(2);
+  const router = useRouter();
 
   const handleChange = (event: React.ChangeEvent<unknown>, value: number) => {
     setPage(value);
@@ -110,9 +114,12 @@ const JobListTable = () => {
             {jobList.map((job, index) => (
               <TableRow
                 key={index}
-                component={NextLink}
-                href={`/recruiter/jobs/${index + 1}`}
-                sx={{ cursor: "pointer", textDecoration: "none" }}
+                onClick={() => router.push(`/recruiter/jobs/${job.id}`)}
+                sx={{
+                  cursor: "pointer",
+                  textDecoration: "none",
+                  color: "inherit",
+                }}
               >
                 <TableCell padding="checkbox">
                   <Checkbox />

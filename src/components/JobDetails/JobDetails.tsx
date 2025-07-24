@@ -58,10 +58,22 @@ const JobDetails = () => {
               </Button>
             </Link>
           </Stack>
-          <Box sx={{ display: "flex", gap: "8px" }}>
+          <Box
+            sx={{
+              display: { xs: "block", sm: "flex" },
+              width: "100%",
+              gap: "8px",
+            }}
+          >
             <Typography className={styles.title}>Senior UX Designer</Typography>
 
-            <Stack direction="row" className={styles.align1}>
+            <Stack
+              sx={{
+                display: { xs: "none", sm: "flex" },
+              }}
+              direction="row"
+              className={styles.align1}
+            >
               <Chip className={styles.chip} label="FULL-TIME" size="small" />
               <Chip className={styles.chip} label="HYBRID" size="small" />
             </Stack>
@@ -125,7 +137,6 @@ const JobDetails = () => {
       </Box>
       <Stack
         sx={{
-          marginTop: "32px",
           gap: "16px",
         }}
       >
@@ -230,13 +241,13 @@ const Section = ({
   bullets: string[];
   paragraph?: boolean;
 }) => (
-  <Box mb={4}>
+  <Box>
     <Typography variant="subtitle1" fontWeight={600} mb={1}>
       {title}
     </Typography>
     {paragraph ? (
       bullets.map((item, i) => (
-        <Typography key={i} variant="body2" color="text.secondary" mb={1}>
+        <Typography key={i} variant="body2" color="text.secondary">
           {item}
         </Typography>
       ))

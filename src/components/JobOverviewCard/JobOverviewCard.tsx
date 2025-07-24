@@ -30,7 +30,15 @@ export default function JobOverviewCard({ id }: { id: string }) {
 
   return (
     <>
-      <Box className={styles.cardContainer}>
+      <Box
+        sx={{
+          width: {
+            xs: "300px",
+            sm: "100%",
+          },
+        }}
+        className={styles.cardContainer}
+      >
         <ConfirmationDialog
           open={openDialog}
           onClose={() => setOpenDialog(false)}
@@ -56,10 +64,20 @@ export default function JobOverviewCard({ id }: { id: string }) {
             }}
           >
             <Box
-              width={"100%"}
-              display="flex"
-              alignItems="center"
-              justifyContent="space-between"
+              sx={{
+                width: "100%",
+                display: "flex",
+                alignItems: { xs: "flex-start", md: "center" },
+                justifyContent: "center",
+                flexDirection: {
+                  xs: "column",
+                  md: "row",
+                },
+                gap: {
+                  xs: "20px",
+                  md: "0px",
+                },
+              }}
             >
               <Box display="flex" alignItems="center" gap={"16px"}>
                 <Avatar
@@ -144,7 +162,15 @@ export default function JobOverviewCard({ id }: { id: string }) {
               </Stack>
             </Stack>
 
-            <Stack direction="row" className={styles.align3}>
+            <Stack
+              sx={{
+                display: {
+                  xs: "none",
+                },
+              }}
+              direction="row"
+              className={styles.align3}
+            >
               {["IT", "Social", "Recruiting", "HR"].map((tag) => (
                 <Chip key={tag} label={tag} className={styles.chip} />
               ))}

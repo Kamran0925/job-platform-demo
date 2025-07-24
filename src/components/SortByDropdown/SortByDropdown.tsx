@@ -20,15 +20,8 @@ const sortOptions = [
 ];
 
 const SortByDropdown = () => {
-  const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
+  const [selectedOptions] = useState<string[]>([]);
   const [open, setOpen] = useState(false);
-
-  const handleChange = (event: SelectChangeEvent<typeof selectedOptions>) => {
-    const {
-      target: { value },
-    } = event;
-    setSelectedOptions(typeof value === "string" ? value.split(",") : value);
-  };
 
   const handleScroll = () => {
     setOpen(false);
@@ -70,7 +63,7 @@ const SortByDropdown = () => {
           onClose={() => setOpen(false)}
           multiple
           value={selectedOptions}
-          onChange={handleChange}
+          onChange={() => null}
           renderValue={(selected) => selected.join(", ")}
           MenuProps={{
             disablePortal: true,

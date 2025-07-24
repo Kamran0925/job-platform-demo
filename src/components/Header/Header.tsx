@@ -6,8 +6,8 @@ import classNames from "classnames";
 import { useRouter } from "next/navigation";
 import ProfileDropdown from "../ProfileDropDown/ProfileDropDown";
 import SearchInput from "../SearchFor/SearchFor";
-import styles from "./Header.module.css";
 import useAuth from "@/context/AuthContext";
+import styles from "./Header.module.css";
 
 export default function Header() {
   const { userType, logout } = useAuth();
@@ -22,7 +22,6 @@ export default function Header() {
     <Box
       className={styles.container}
       sx={{
-        ...(userType !== "user" && { justifyContent: "flex-end" }),
         width: "100%",
         flexWrap: "wrap",
       }}
@@ -51,7 +50,7 @@ export default function Header() {
           <Button className={styles.btn}>
             <Image src="/assets/plus.svg" alt="plus" width={16} height={16} />
             New Job
-          </Button>{" "}
+          </Button>
           <Box className={styles.iconContainer}>
             <Image
               src="/assets/settings.svg"
@@ -82,7 +81,7 @@ export default function Header() {
             onClick={handleLogoClick}
             className={classNames(styles.button, styles.contained)}
           >
-            Sign Up
+            Signup
           </Button>
         </Box>
       )}

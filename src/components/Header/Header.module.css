@@ -28,26 +28,30 @@
 
 .button {
   padding: 12px;
-  width: 90.5px;
+  max-width: 90.5px;
   height: 40px;
   border-radius: 8px;
   text-transform: none;
   flex-grow: 1;
+  box-shadow: none;
 }
 
 .outlined {
-  border: 1px solid #1976d2;
-  color: #1976d2;
+  padding: 12px;
+  border: 0 !important;
+  color: #303030 !important;
 }
 
 .contained {
-  background-color: #1976d2;
+  background: #1a56db;
+  border: 1px solid #1a56db;
+  border-radius: 8px !important;
   color: #fff;
 }
 
 .subContainer {
   display: flex;
-  max-width: 1200px;
+  width: 100%;
   justify-content: flex-start;
   align-items: center;
   gap: 24px;
@@ -72,14 +76,15 @@
   align-items: center;
   padding: 14px 24px;
   gap: 8px;
-  height: 52px;
+  height: 41px;
   box-sizing: border-box;
   background: #1a56db;
   border-radius: 8px;
   color: #fff;
+  max-width: 156px;
 }
 
-.iconContainer {
+.subContainer .iconContainer {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -112,7 +117,7 @@
   .subContainer {
     flex-wrap: wrap;
     gap: 16px;
-    justify-content: flex-start;
+    justify-content: flex-end;
   }
 
   .inputField {
@@ -142,5 +147,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+  }
+
+  .subContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .subContainer .iconContainer {
+    display: none;
   }
 }
